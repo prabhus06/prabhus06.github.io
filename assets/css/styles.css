@@ -502,6 +502,7 @@ img {
     padding-left: 2.7rem;
     column-gap: .5rem;
     row-gap: .5rem;
+        grid-template-columns: repeat(2, 1fr);
 }
 
 .skills__titles {
@@ -909,14 +910,12 @@ img {
 
 .clients__img {
     width: 120px;
-
-    justify-self: center;
+    justify-content: center;
 }
 
 .ee__img {
     width: 40px;
-
-    justify-self: center;
+    justify-content: center;
 }
 
 
@@ -1126,6 +1125,10 @@ img {
 
     .skills__title {
         font-size: var(--normal-font-size);
+    }
+
+    .skills__list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .qualification__data {
