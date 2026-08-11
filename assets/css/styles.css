@@ -1,5 +1,6 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 
 /*==================== VARIABLES CSS ====================*/
 :root {
@@ -192,7 +193,13 @@ img {
     align-items: center;
 }
 
-.nav__logo,
+.nav__logo {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2.5rem;
+}
+
 .nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
@@ -420,7 +427,7 @@ img {
 }
 
 .about__description {
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--mb-2-5);
 }
 
@@ -502,7 +509,7 @@ img {
     padding-left: 2.7rem;
     column-gap: .5rem;
     row-gap: .5rem;
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .skills__titles {
@@ -910,12 +917,14 @@ img {
 
 .clients__img {
     width: 120px;
-    justify-content: center;
+    margin: 0 auto;
+    display: block;
 }
 
 .ee__img {
     width: 40px;
-    justify-content: center;
+    margin: 0 auto;
+    display: block;
 }
 
 
@@ -1313,6 +1322,7 @@ img {
 
     .about__container {
         column-gap: 5rem;
+        max-width: 968px;
     }
 
     .about__img {
@@ -1320,7 +1330,7 @@ img {
     }
 
     .about__description {
-        text-align: center;
+        text-align: left;
     }
 
     .about__info {
