@@ -165,7 +165,7 @@ img {
 
 /*==================== LAYOUT ====================*/
 .container {
-    max-width: 768px;
+    max-width: 1200px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
 }
@@ -186,7 +186,7 @@ img {
 
 /*==================== NAV ====================*/
 .nav {
-    max-width: 968px;
+    max-width: 1200px;
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
@@ -506,7 +506,7 @@ img {
 .skills__list {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
-    padding-left: 2.7rem;
+    padding-left: 0.5rem;
     column-gap: .5rem;
     row-gap: .5rem;
     grid-template-columns: repeat(2, 1fr);
@@ -1321,8 +1321,9 @@ img {
     }
 
     .about__container {
-        column-gap: 5rem;
-        max-width: 968px;
+        column-gap: .5rem;
+        max-width: 1200px;
+        grid-template-columns: 1fr 2fr;
     }
 
     .about__img {
