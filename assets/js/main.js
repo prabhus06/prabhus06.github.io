@@ -42,6 +42,37 @@ function toggleSkills() {
 
     if (itemClass === 'skills__content skills__close') {
         this.parentNode.className = 'skills__content skills__open';
+
+        // Keep the opened header visible after layout shift from closing others
+        const header = this;
+        const headerOffset = 80;
+
+        requestAnimationFrame(() => {
+            const rect = header.getBoundingClientRect();
+            // If header shifted above visible area, smoothly scroll to keep it in view
+            if (rect.top < headerOffset) {
+                const targetPosition = window.pageYOffset + rect.top - headerOffset;
+                const start = window.pageYOffset;
+                const distance = targetPosition - start;
+                const duration = 600;
+                const startTime = performance.now();
+
+                document.documentElement.style.scrollBehavior = 'auto';
+
+                function scrollStep(currentTime) {
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    window.scrollTo(0, start + distance * ease);
+                    if (progress < 1) {
+                        requestAnimationFrame(scrollStep);
+                    } else {
+                        document.documentElement.style.scrollBehavior = '';
+                    }
+                }
+
+                requestAnimationFrame(scrollStep);
+            }
+        });
     }
 }
 
@@ -224,7 +255,45 @@ const sr = ScrollReveal({
     //     reset: true
 });
 
-sr.reveal('.home__container, .about__container, .about__img, .skills__container, .skills__subtitle, .skills__text, .qualification__container, .portfolio__container, .clients__container, .hobbies__container, .contact__container, .certification__container', {});
-sr.reveal('.home__img, .about__img, .about__subtitle, .about__text, .skills__data, .skills__img, .contact__subtitle, .qualification__sections', { delay: 400 });
+sr.reveal('.home__container, .about__container, .skills__container, .skills__subtitle, .skills__text, .qualification__container, .portfolio__container, .clients__container, .hobbies__container, .contact__container, .certification__container', {});
+sr.reveal('.about__subtitle, .about__text, .skills__img, .contact__subtitle, .qualification__sections', { delay: 400 });
 sr.reveal('.home__social, .about__info', { interval: 200 });
 sr.reveal('.work__img, .contact__input', { interval: 200 }); 
+
+
+/*==================== PARALLAX ABOUT IMAGE ====================*/
+const aboutImg = document.querySelector('.about__img');
+const homeImg = document.querySelector('.home__img');
+
+if (aboutImg || homeImg) {
+    window.addEventListener('scroll', () => {
+        // Only apply parallax on desktop
+        if (window.innerWidth < 768) {
+            if (aboutImg) aboutImg.style.transform = '';
+            if (homeImg) homeImg.style.transform = '';
+            return;
+        }
+
+        const windowHeight = window.innerHeight;
+
+        if (aboutImg) {
+            const section = aboutImg.closest('.about__container');
+            const sectionRect = section.getBoundingClientRect();
+            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+                const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
+                const offset = center * 0.1;
+                aboutImg.style.transform = `translateY(${offset}px)`;
+            }
+        }
+
+        if (homeImg) {
+            const section = homeImg.closest('.home.section');
+            const sectionRect = section.getBoundingClientRect();
+            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+                const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
+                const offset = center * 0.15;
+                homeImg.style.transform = `translateY(${offset}px)`;
+            }
+        }
+    });
+}
