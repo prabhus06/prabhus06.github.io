@@ -3,10 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!--==================== PWA & iOS ====================-->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/img/ps.jpeg">
 
     <!--==================== ICON ====================-->
     <link rel="icon" href="assets/img/DLG.svg">
+
+    <!--==================== GOOGLE FONTS ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Mea+Culpa&display=block" rel="stylesheet">
 
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
@@ -39,6 +50,12 @@
 </head>
 
 <body>
+    <!-- Prevent Dark Mode Flash -->
+    <script>
+        if (localStorage.getItem('selected-theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
