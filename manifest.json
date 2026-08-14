@@ -1,0 +1,17 @@
+{
+  "name": "Prabhu S Portfolio",
+  "short_name": "Prabhu",
+  "description": "Portfolio of Prabhu S, Strategic QA Test Manager",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "assets/img/ps.jpeg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

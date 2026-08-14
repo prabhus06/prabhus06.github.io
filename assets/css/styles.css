@@ -1,7 +1,4 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
-
 /*==================== VARIABLES CSS ====================*/
 :root {
     --header-height: 3rem;
@@ -118,6 +115,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    padding-top: env(safe-area-inset-top);
 }
 
 h1,
@@ -182,6 +180,7 @@ img {
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 /*==================== NAV ====================*/
@@ -306,6 +305,16 @@ img {
 
 .home__social-icon:hover {
     color: var(--first-color-alt);
+}
+
+.home__img {
+    animation: blobFadeIn 0.8s ease-in;
+}
+
+@keyframes blobFadeIn {
+    0% { opacity: 0; }
+    30% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .home__blob {
@@ -1331,6 +1340,8 @@ body.dark-theme .clients__content:hover {
     .header {
         top: 0;
         bottom: initial;
+        padding-bottom: 0;
+        padding-top: env(safe-area-inset-top);
     }
 
     .header,
@@ -1510,7 +1521,7 @@ body.dark-theme .clients__content:hover {
     }
 
     .home__social {
-        transform: translateX(-6rem);
+        transform: translateX(0);
     }
 
     .clients__container {
