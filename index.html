@@ -5,6 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
+    <!--==================== DARK THEME (must run before styles to prevent flash) ====================-->
+    <script>
+        if (localStorage.getItem('selected-theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme-preload');
+            document.body && document.body.classList.add('dark-theme');
+        }
+    </script>
+
+    <!--==================== SEO META ====================-->
+    <meta name="description"
+        content="Prabhu S — QA Engineering Manager with 17+ years experience in test automation, AI-driven quality engineering, digital transformation and leading enterprise-scale QA programmes.">
+    <meta name="author" content="Prabhu S">
+
+    <!--==================== OPEN GRAPH ====================-->
+    <meta property="og:title" content="Prabhu S — QA Engineering Manager">
+    <meta property="og:description"
+        content="Quality-driven leader with 17+ years experience in AI-driven engineering excellence, test automation and digital transformation.">
+    <meta property="og:image" content="https://prabhus06.github.io/assets/img/ps.jpeg">
+    <meta property="og:url" content="https://prabhus06.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prabhu S — QA Engineering Manager">
+    <meta name="twitter:description"
+        content="Quality-driven leader with 17+ years experience in AI-driven engineering excellence and test automation.">
+    <meta name="twitter:image" content="https://prabhus06.github.io/assets/img/ps.jpeg">
+
     <!--==================== PWA & iOS ====================-->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,21 +40,22 @@
     <!--==================== ICON ====================-->
     <link rel="icon" href="assets/img/DLG.svg">
 
+    <!--==================== PRELOAD CRITICAL ASSETS ====================-->
+    <link rel="preload" as="image" href="assets/img/perfil.png">
+
     <!--==================== GOOGLE FONTS ====================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Mea+Culpa&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Mea+Culpa&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
 
     <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 
-    <!--==================== FONT AWESOME ====================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--==================== FONT AWESOME 6 ====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!--==================== SWIPER CSS ====================-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
@@ -50,7 +77,7 @@
 </head>
 
 <body>
-    <!-- Prevent Dark Mode Flash -->
+    <!--==================== PREVENT DARK MODE FLASH ====================-->
     <script>
         if (localStorage.getItem('selected-theme') === 'dark') {
             document.body.classList.add('dark-theme');
@@ -183,27 +210,24 @@
                     <div class="about__description">
                         <p style="margin-bottom: 1rem;">
                             I'm a Strategic QA Test Manager with over 17 years of experience turning quality into a
-                            competitive advantage — not an afterthought. My path started as a hands-on engineer and grew
-                            into leading enterprise-scale QA programmes across retail and telecoms, where I've built and
-                            led
-                            distributed, multi-vendor teams of 50+ engineers spanning multiple time zones.
+                            competitive advantage, not an afterthought. My path started as a hands-on engineer and grew
+                            into leading enterprise scale QA programmes across retail and telecoms, where I've built and
+                            led distributed, multi vendor teams of 50+ engineers spanning multiple time zones.
                         </p>
                         <p style="margin-bottom: 1rem;">
                             I believe great quality engineering is as much about culture as it is about code. I focus on
-                            building high-performing teams through mentoring, strong vendor governance, and a
-                            quality-first
-                            mindset that gets embedded early, not bolted on at the end. That approach has delivered real
-                            business impact — including £324K+ in annual savings
+                            building high performing teams through mentoring, strong vendor governance, and a
+                            quality first mindset that gets embedded early, not bolted on at the end. That approach has
+                            delivered real
+                            business impact including £324K+ in annual savings
                         </p>
                         <p>
-                            My expertise spans the full quality lifecycle — Functional, API, UI, Microservices,
-                            Performance,
-                            Accessibility, and Release Governance — with a growing focus on scalable test automation and
-                            AI-augmented testing. I'm driven by the challenge of building systems and teams that don't
-                            just
-                            catch issues, but prevent them — turning quality into something users never have to think
-                            about,
-                            because it just works.
+                            My expertise spans the full quality lifecycle Functional, API, UI, Microservices,
+                            Performance, Accessibility, and Release Governance with a growing focus on scalable test
+                            automation and
+                            AI augmented testing. I'm driven by the challenge of building systems and teams that don't
+                            just catch issues, but prevent them turning quality into something users never have to think
+                            about, because it just works.
                         </p>
                     </div>
 
@@ -243,7 +267,7 @@
                     <div class="skills__header">
                         <i class="uil uil-brackets-curly skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Programming Skill</h1>
+                            <h3 class="skills__title">Programming Skill</h3>
                             <span class="skills__subtitle">Code that powers it all</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -256,7 +280,7 @@
                     <div class="skills__header">
                         <i class="uil uil-servers skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Engineering Tools</h1>
+                            <h3 class="skills__title">Engineering Tools</h3>
                             <span class="skills__subtitle">Build, ship &amp; monitor</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -269,7 +293,7 @@
                     <div class="skills__header">
                         <i class="uil uil-brain skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">AI and Optimization</h1>
+                            <h3 class="skills__title">AI and Optimization</h3>
                             <span class="skills__subtitle">Smarter systems, faster results</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -282,7 +306,7 @@
                     <div class="skills__header">
                         <i class="uil uil-robot skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">AI Tools</h1>
+                            <h3 class="skills__title">AI Tools</h3>
                             <span class="skills__subtitle">Designed, built &amp; Deployed</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -295,7 +319,7 @@
                     <div class="skills__header">
                         <i class="uil uil-cog skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Frameworks</h1>
+                            <h3 class="skills__title">Frameworks</h3>
                             <span class="skills__subtitle">Blueprint for testing applications</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -308,7 +332,7 @@
                     <div class="skills__header">
                         <i class="uil uil-channel skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">UX/UI</h1>
+                            <h3 class="skills__title">UX/UI</h3>
                             <span class="skills__subtitle">Design &amp; prototyping</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -321,7 +345,7 @@
                     <div class="skills__header">
                         <i class="uil uil-tachometer-fast skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Test management</h1>
+                            <h3 class="skills__title">Test management</h3>
                             <span class="skills__subtitle">Plan, track &amp; report</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -334,7 +358,7 @@
                     <div class="skills__header">
                         <i class="uil uil-cloud-data-connection skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Cloud Tools</h1>
+                            <h3 class="skills__title">Cloud Tools</h3>
                             <span class="skills__subtitle">Infrastructure &amp; services</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -347,7 +371,7 @@
                     <div class="skills__header">
                         <i class="uil uil-layer-group skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Technologies</h1>
+                            <h3 class="skills__title">Technologies</h3>
                             <span class="skills__subtitle">Platforms &amp; ecosystems</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -360,7 +384,7 @@
                     <div class="skills__header">
                         <i class="uil uil-database-alt skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Databases</h1>
+                            <h3 class="skills__title">Databases</h3>
                             <span class="skills__subtitle">SQL and NoSQL</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
@@ -373,213 +397,13 @@
                     <div class="skills__header">
                         <i class="uil uil-english-to-chinese skills__icon"></i>
                         <div>
-                            <h1 class="skills__title">Languages</h1>
+                            <h3 class="skills__title">Languages</h3>
                             <span class="skills__subtitle">Spoken &amp; written</span>
                         </div>
                         <i class="uil uil-angle-down skills__arrow"></i>
                     </div>
                     <div id="skills-languages" class="skills__list grid"></div>
                 </div>
-
-                <script>
-                    // ============================================================
-                    // SKILLS DATA — add / remove / reorder items here only
-                    // icon: devicons.io slug  |  iconUrl: full custom URL
-                    // iconClass: devicon font class (fallback for non-devicons.io)
-                    // subtitle: smaller text shown after the name
-                    // ============================================================
-                    const DEVICONS_BASE = 'https://devicons.io/devicons/icons/';
-
-                    const skillSections = [
-                        {
-                            id: 'skills-programming',
-                            items: [
-                                { name: 'Java', icon: 'java' },
-                                { name: 'JavaScript', icon: 'javascript' },
-                                { name: 'TypeScript', icon: 'typescript-icon' },
-                                { name: 'HTML', icon: 'html-5' },
-                                { name: 'Shell', iconClass: 'devicon-powershell-plain colored' },
-                                { name: 'Groovy', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/groovy/groovy-original.svg' },
-                                { name: 'Dart', icon: 'dart' },
-                                { name: 'CSS', icon: 'css-3' },
-                                { name: 'Python', icon: 'python' },
-                                { name: "YAML", icon: "yaml" },
-                                { name: ".NET", icon: "dotnet" },
-                                { name: "JSON", icon: "json" }
-                            ]
-                        },
-                        {
-                            id: 'skills-engineering',
-                            items: [
-                                { name: 'Appium', icon: 'appium' },
-                                { name: 'Cucumber', icon: 'cucumber' },
-                                { name: 'NodeJS', icon: 'nodejs-icon' },
-                                { name: 'Curl', icon: 'curl' },
-                                { name: 'SoapUI Pro', iconUrl: 'https://avatars.githubusercontent.com/u/1644671?s=200&v=4' },
-                                { name: 'Postman', icon: 'postman-icon' },
-                                { name: 'Deque', iconUrl: 'https://avatars.githubusercontent.com/u/4094299?s=200&v=4' },
-                                { name: 'GitHub', icon: 'github-icon' },
-                                { name: 'Bitbucket', icon: 'bitbucket' },
-                                { name: 'Jenkins', icon: 'jenkins' },
-                                { name: 'GitLab', icon: 'gitlab' },
-                                { name: 'GitHub Actions', icon: 'github-actions' },
-                                { name: 'Gitkraken', icon: 'gitkraken' },
-                                { name: 'Maven', icon: 'maven' },
-                                { name: 'BDD/TDD' },
-                                { name: 'JUnit', iconClass: 'devicon-junit-plain colored' },
-                                { name: 'TestNG', iconUrl: 'https://avatars.githubusercontent.com/u/12528662?s=200&v=4' },
-                                { name: 'Log4J', icon: 'apache' },
-                                { name: 'Lighthouse', icon: 'lighthouse' },
-                                { name: 'Selenoid', iconUrl: 'https://avatars.githubusercontent.com/u/26328913?s=200&v=4' },
-                                { name: 'Wiremock', iconUrl: 'https://avatars.githubusercontent.com/u/21368587?s=200&v=4' },
-                                { name: 'npm', icon: 'npm-icon' },
-                                { name: 'Babel', iconClass: 'devicon-babel-plain colored' },
-                                { name: 'Firebase', icon: 'firebase-icon' },
-                                { name: 'GraphQL', icon: 'graphql' },
-                                { name: 'Docker', icon: 'docker-icon' },
-                                { name: 'Sonarqube', icon: 'sonarqube' },
-                                { name: 'Grafana', icon: 'grafana' },
-                                { name: 'Bash', icon: 'bash-icon' },
-                                { name: 'Dynatrace', icon: 'dynatrace' },
-                                { name: 'ESLint', icon: 'eslint' },
-                                { name: 'Google Analytics', icon: 'google-analytics' },
-                                { name: 'Homebrew', icon: 'homebrew' },
-                                { name: 'Prettier', icon: 'prettier' },
-                                { name: "qlik", icon: "qlik" },
-                                { name: 'Swagger', icon: 'swagger' },
-                            ]
-                        },
-                        {
-                            id: 'skills-ai-optimization',
-                            items: [
-                                { name: 'AutoGen', iconUrl: 'https://camo.githubusercontent.com/2905ec919ee215233fc90a7fa9303c96f4526e9e25d9f0cd1d0cd590f4a6a5e1/68747470733a2f2f6d6963726f736f66742e6769746875622e696f2f6175746f67656e2f302e322f696d672f61672e737667' },
-                                { name: 'MCP', icon: 'mcp-icon' },
-                                { name: 'GitHub Copilot', icon: 'github-copilot' },
-                                { name: 'LangChain', icon: 'langchain' },
-                                { name: 'Applitools', icon: 'applitools-icon' },
-                                { name: 'ReportPortal', iconUrl: 'https://avatars.githubusercontent.com/u/17636279?s=200&v=4' },
-                            ]
-                        },
-                        {
-                            id: 'skills-ai-tools',
-                            items: [
-                                { name: 'F.R.I.D.A.Y', subtitle: 'Suit for the Stock Market' },
-                                { name: 'WIT', subtitle: 'Test Intelligence Agent' },
-                                { name: 'SAGE', subtitle: 'Defect Intelligence & Prevention' },
-                                { name: 'ASK', subtitle: 'Profile to Position' },
-                            ]
-                        },
-                        {
-                            id: 'skills-frameworks',
-                            items: [
-                                { name: 'Selenium', icon: 'selenium' },
-                                { name: 'WebdriverIO', iconUrl: 'https://raw.githubusercontent.com/webdriverio/webdriverio/master/website/static/img/webdriverio.png' },
-                                { name: 'Playwright', icon: 'playwright' },
-                                { name: 'Flutter Integration Test', icon: 'flutter', nameStyle: 'font-size:0.75em;' },
-                                { name: 'Cinnamon' },
-                                { name: 'REST-Assured', iconUrl: 'https://avatars.githubusercontent.com/u/19369327?s=200&v=4' },
-                                { name: 'Carina', iconUrl: 'https://avatars.githubusercontent.com/u/59013197?s=200&v=4' },
-                                { name: 'Allure', iconUrl: 'https://avatars.githubusercontent.com/u/5879127?s=200&v=4' },
-                                { name: "Cypress", icon: "cypress-icon" }
-                            ]
-                        },
-                        {
-                            id: 'skills-uxui',
-                            items: [
-                                { name: 'Photoshop', iconClass: 'devicon-photoshop-plain colored' },
-                                { name: 'Adobe Lightroom' },
-                                { name: 'iMovie' },
-                                { name: 'Figma', icon: 'figma' },
-                            ]
-                        },
-                        {
-                            id: 'skills-test-management',
-                            items: [
-                                { name: 'Jira', icon: 'jira' },
-                                { name: "Xray", icon: "xray" },
-                                { name: 'Quality Center' },
-                                { name: 'Confluence', icon: 'confluence' },
-                                { name: 'Slack', icon: 'slack-icon' },
-                                { name: 'Trello', icon: 'trello' },
-                            ]
-                        },
-                        {
-                            id: 'skills-cloud',
-                            items: [
-                                { name: 'Perfecto', iconUrl: 'https://avatars.githubusercontent.com/u/17961151?s=200&v=4' },
-                                { name: 'Headspin', iconUrl: 'https://avatars.githubusercontent.com/u/104040852?s=200&v=4' },
-                                { name: 'Saucelabs', iconUrl: 'https://avatars.githubusercontent.com/u/88837?s=200&v=4' },
-                                { name: 'BrowserStack', iconClass: 'devicon-browserstack-plain colored' },
-                                { name: 'AWS', icon: 'aws' },
-                            ]
-                        },
-                        {
-                            id: 'skills-technologies',
-                            items: [
-                                { name: 'Flutter', icon: 'flutter' },
-                                { name: 'Adobe', iconUrl: 'https://avatars.githubusercontent.com/u/476009?s=200&v=4' },
-                                { name: 'iOS', icon: 'apple' },
-                                { name: 'Android', icon: 'android' },
-                                { name: 'AWS', icon: 'aws' },
-                                { name: 'Hybris', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/c/ca/Hybris_company_%28SAP%29_logo.jpg' },
-                                { name: 'React', iconClass: 'devicon-react-original colored' },
-                                { name: 'Cordova', icon: 'cordova' },
-                                { name: "algolia", icon: "algolia-icon" },
-
-                            ]
-                        },
-                        {
-                            id: 'skills-databases',
-                            items: [
-                                { name: 'MongoDB', icon: 'mongodb-icon' },
-                                { name: 'Kibana', icon: 'kibana' },
-                            ]
-                        },
-                        {
-                            id: 'skills-languages',
-                            items: [
-                                { name: 'English' },
-                                { name: 'Tamil' },
-                                { name: 'Kannada' },
-                                { name: 'Hindi' },
-                            ]
-                        },
-                    ];
-
-                    function renderSkillIcon(item) {
-                        if (item.iconClass) {
-                            return `<i class="${item.iconClass}"></i>`;
-                        }
-                        const src = item.icon
-                            ? `${DEVICONS_BASE}${item.icon}.svg`
-                            : item.iconUrl || null;
-                        if (src) {
-                            return `<p class="skills__image"><img src="${src}" alt="${item.name}" /></p>`;
-                        }
-                        return '';
-                    }
-
-                    function renderSkillItem(item) {
-                        const style = item.nameStyle ? ` style="${item.nameStyle}"` : '';
-                        const nameHtml = item.subtitle
-                            ? `<span style="display:block;line-height:0.8;">${item.name}<br><span style="font-size:0.65em;font-weight:normal;opacity:0.75;">${item.subtitle.replace('<br>', '')}</span></span>`
-                            : item.name;
-                        return `
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name"${style}>${nameHtml}</h3>
-                                ${renderSkillIcon(item)}
-                            </div>
-                        </div>`;
-                    }
-
-                    skillSections.forEach(({ id, items }) => {
-                        const container = document.getElementById(id);
-                        if (container) {
-                            container.innerHTML = items.map(renderSkillItem).join('');
-                        }
-                    });
-                </script>
 
             </div>
         </section>
@@ -850,23 +674,18 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">ISTQB Certified Tester</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">ISTQB Certified Tester</h3>
                         </div>
-
                     </div>
-
                 </div>
                 <!--==================== certification 2 ====================-->
                 <div class="certification__content certification__close">
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">Tricentis Automation Specialist Level 1 for Tricentis Tosca
-                                10.0</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">Tricentis Automation Specialist Level 1 for Tricentis Tosca
+                                10.0</h3>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 3 ====================-->
@@ -874,11 +693,9 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">Tricentis Automation Specialist Level 2 for Tricentis Tosca
-                                10.0</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">Tricentis Automation Specialist Level 2 for Tricentis Tosca
+                                10.0</h3>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 4 ====================-->
@@ -886,10 +703,9 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">GenAI Academy: Yellow Belt</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">GenAI Academy: Yellow Belt</h3>
+                            <span class="certification__subtitle">Issued: February 2026</span>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 5 ====================-->
@@ -897,10 +713,8 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">Jira Fundamentals Badge</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">Jira Fundamentals Badge</h3>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 6 ====================-->
@@ -908,10 +722,8 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">NTT Data Certified Test Lead</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">NTT Data Certified Test Lead</h3>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 7 ====================-->
@@ -919,10 +731,8 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">IBM - Enterprise Design Thinking Practitioner</h1>
-                            <span class="certification__subtitle"></span>
+                            <h3 class="certification__title">IBM - Enterprise Design Thinking Practitioner</h3>
                         </div>
-
                     </div>
                 </div>
                 <!--==================== certification 8 ====================-->
@@ -930,17 +740,8 @@
                     <div class="certification__header">
                         <i class="uil uil-brightness-empty certification__icon"></i>
                         <div>
-                            <h1 class="certification__title">Google - Introduction to Generative AI</h1>
-                            <span class="certification__subtitle"></span>
-                        </div>
-
-                    </div>
-
-                    <div class="certification__list grid">
-                        <div class="certification__data">
-                            <div class="certification__titles">
-                                <h3 class="certification__name"></h3>
-                            </div>
+                            <h3 class="certification__title">Google - Introduction to Generative AI</h3>
+                            <span class="certification__subtitle">Issued: January 2026</span>
                         </div>
                     </div>
                 </div>
@@ -1028,6 +829,7 @@
                             <h3 class="contact__title">Email</h3>
                             <a href="mailto:prabhu.shekar06@gmail.com">
                                 <span class="contact__subtitle">engineering@prabhus.com</span>
+                            </a>
                         </div>
                     </div>
                     <div class="contact__information">
@@ -1059,8 +861,6 @@
                 </div>
 
             </div>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script src="https://smtpjs.com/v3/smtp.js"></script>
         </section>
     </main>
 

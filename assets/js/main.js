@@ -1,11 +1,209 @@
 /*==================== PWA SERVICE WORKER ====================*/
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => console.log('ServiceWorker registration successful'))
-      .catch(err => console.log('ServiceWorker registration failed: ', err));
-  });
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+    });
 }
+
+/*==================== FOUC FIX — show body once DOM is ready ====================*/
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('ready');
+});
+
+/*==================== SKILLS RENDERING ====================*/
+const DEVICONS_BASE = 'https://devicons.io/devicons/icons/';
+
+const skillSections = [
+    {
+        id: 'skills-programming',
+        items: [
+            { name: 'Java', icon: 'java' },
+            { name: 'JavaScript', icon: 'javascript' },
+            { name: 'TypeScript', icon: 'typescript-icon' },
+            { name: 'HTML', icon: 'html-5' },
+            { name: 'Shell', iconClass: 'devicon-powershell-plain colored' },
+            { name: 'Groovy', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/groovy/groovy-original.svg' },
+            { name: 'Dart', icon: 'dart' },
+            { name: 'CSS', icon: 'css-3' },
+            { name: 'Python', icon: 'python' },
+            { name: 'YAML', icon: 'yaml' },
+            { name: '.NET', icon: 'dotnet' },
+            { name: 'JSON', icon: 'json' }
+        ]
+    },
+    {
+        id: 'skills-engineering',
+        items: [
+            { name: 'Appium', icon: 'appium' },
+            { name: 'Cucumber', icon: 'cucumber' },
+            { name: 'NodeJS', icon: 'nodejs-icon' },
+            { name: 'Curl', icon: 'curl' },
+            { name: 'SoapUI Pro', iconUrl: 'https://avatars.githubusercontent.com/u/1644671?s=200&v=4' },
+            { name: 'Postman', icon: 'postman-icon' },
+            { name: 'Deque', iconUrl: 'https://avatars.githubusercontent.com/u/4094299?s=200&v=4' },
+            { name: 'GitHub', icon: 'github-icon' },
+            { name: 'Bitbucket', icon: 'bitbucket' },
+            { name: 'Jenkins', icon: 'jenkins' },
+            { name: 'GitLab', icon: 'gitlab' },
+            { name: 'GitHub Actions', icon: 'github-actions' },
+            { name: 'Gitkraken', icon: 'gitkraken' },
+            { name: 'Maven', icon: 'maven' },
+            { name: 'BDD/TDD' },
+            { name: 'JUnit', iconClass: 'devicon-junit-plain colored' },
+            { name: 'TestNG', iconUrl: 'https://avatars.githubusercontent.com/u/12528662?s=200&v=4' },
+            { name: 'Log4J', icon: 'apache' },
+            { name: 'Lighthouse', icon: 'lighthouse' },
+            { name: 'Selenoid', iconUrl: 'https://avatars.githubusercontent.com/u/26328913?s=200&v=4' },
+            { name: 'Wiremock', iconUrl: 'https://avatars.githubusercontent.com/u/21368587?s=200&v=4' },
+            { name: 'npm', icon: 'npm-icon' },
+            { name: 'Babel', iconClass: 'devicon-babel-plain colored' },
+            { name: 'Firebase', icon: 'firebase-icon' },
+            { name: 'GraphQL', icon: 'graphql' },
+            { name: 'Docker', icon: 'docker-icon' },
+            { name: 'Sonarqube', icon: 'sonarqube' },
+            { name: 'Grafana', icon: 'grafana' },
+            { name: 'Bash', icon: 'bash-icon' },
+            { name: 'Dynatrace', icon: 'dynatrace' },
+            { name: 'ESLint', icon: 'eslint' },
+            { name: 'Google Analytics', icon: 'google-analytics' },
+            { name: 'Homebrew', icon: 'homebrew' },
+            { name: 'Prettier', icon: 'prettier' },
+            { name: 'Qlik', icon: 'qlik' },
+            { name: 'Swagger', icon: 'swagger' },
+        ]
+    },
+    {
+        id: 'skills-ai-optimization',
+        items: [
+            { name: 'AutoGen', iconUrl: 'https://camo.githubusercontent.com/2905ec919ee215233fc90a7fa9303c96f4526e9e25d9f0cd1d0cd590f4a6a5e1/68747470733a2f2f6d6963726f736f66742e6769746875622e696f2f6175746f67656e2f302e322f696d672f61672e737667' },
+            { name: 'MCP', icon: 'mcp-icon' },
+            { name: 'GitHub Copilot', icon: 'github-copilot' },
+            { name: 'LangChain', icon: 'langchain' },
+            { name: 'Applitools', icon: 'applitools-icon' },
+            { name: 'ReportPortal', iconUrl: 'https://avatars.githubusercontent.com/u/17636279?s=200&v=4' },
+        ]
+    },
+    {
+        id: 'skills-ai-tools',
+        items: [
+            { name: 'F.R.I.D.A.Y', subtitle: 'Suit for the Stock Market' },
+            { name: 'WIT', subtitle: 'Test Intelligence Agent' },
+            { name: 'SAGE', subtitle: 'Defect Intelligence & Prevention' },
+            { name: 'ASK', subtitle: 'Profile to Position' },
+        ]
+    },
+    {
+        id: 'skills-frameworks',
+        items: [
+            { name: 'Selenium', icon: 'selenium' },
+            { name: 'WebdriverIO', iconUrl: 'https://raw.githubusercontent.com/webdriverio/webdriverio/master/website/static/img/webdriverio.png' },
+            { name: 'Playwright', icon: 'playwright' },
+            { name: 'Flutter Integration Test', icon: 'flutter', nameStyle: 'font-size:0.75em;' },
+            { name: 'Cinnamon' },
+            { name: 'REST-Assured', iconUrl: 'https://avatars.githubusercontent.com/u/19369327?s=200&v=4' },
+            { name: 'Carina', iconUrl: 'https://avatars.githubusercontent.com/u/59013197?s=200&v=4' },
+            { name: 'Allure', iconUrl: 'https://avatars.githubusercontent.com/u/5879127?s=200&v=4' },
+            { name: 'Cypress', icon: 'cypress-icon' }
+        ]
+    },
+    {
+        id: 'skills-uxui',
+        items: [
+            { name: 'Photoshop', iconClass: 'devicon-photoshop-plain colored' },
+            { name: 'Adobe Lightroom' },
+            { name: 'iMovie' },
+            { name: 'Figma', icon: 'figma' },
+        ]
+    },
+    {
+        id: 'skills-test-management',
+        items: [
+            { name: 'Jira', icon: 'jira' },
+            { name: 'Xray', icon: 'xray' },
+            { name: 'Quality Center' },
+            { name: 'Confluence', icon: 'confluence' },
+            { name: 'Slack', icon: 'slack-icon' },
+            { name: 'Trello', icon: 'trello' },
+        ]
+    },
+    {
+        id: 'skills-cloud',
+        items: [
+            { name: 'Perfecto', iconUrl: 'https://avatars.githubusercontent.com/u/17961151?s=200&v=4' },
+            { name: 'Headspin', iconUrl: 'https://avatars.githubusercontent.com/u/104040852?s=200&v=4' },
+            { name: 'Saucelabs', iconUrl: 'https://avatars.githubusercontent.com/u/88837?s=200&v=4' },
+            { name: 'BrowserStack', iconClass: 'devicon-browserstack-plain colored' },
+            { name: 'AWS', icon: 'aws' },
+        ]
+    },
+    {
+        id: 'skills-technologies',
+        items: [
+            { name: 'Flutter', icon: 'flutter' },
+            { name: 'Adobe', iconUrl: 'https://avatars.githubusercontent.com/u/476009?s=200&v=4' },
+            { name: 'iOS', icon: 'apple' },
+            { name: 'Android', icon: 'android' },
+            { name: 'Hybris', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/c/ca/Hybris_company_%28SAP%29_logo.jpg' },
+            { name: 'React', iconClass: 'devicon-react-original colored' },
+            { name: 'Cordova', icon: 'cordova' },
+            { name: 'Algolia', icon: 'algolia-icon' },
+        ]
+    },
+    {
+        id: 'skills-databases',
+        items: [
+            { name: 'MongoDB', icon: 'mongodb-icon' },
+            { name: 'Kibana', icon: 'kibana' },
+        ]
+    },
+    {
+        id: 'skills-languages',
+        items: [
+            { name: 'English' },
+            { name: 'Tamil' },
+            { name: 'Kannada' },
+            { name: 'Hindi' },
+        ]
+    },
+];
+
+function renderSkillIcon(item) {
+    if (item.iconClass) {
+        return `<i class="${item.iconClass}"></i>`;
+    }
+    const src = item.icon
+        ? `${DEVICONS_BASE}${item.icon}.svg`
+        : item.iconUrl || null;
+    if (src) {
+        return `<p class="skills__image"><img src="${src}" alt="${item.name}" loading="lazy" /></p>`;
+    }
+    return '';
+}
+
+function renderSkillItem(item) {
+    const style = item.nameStyle ? ` style="${item.nameStyle}"` : '';
+    const nameHtml = item.subtitle
+        ? `<span style="display:block;line-height:0.8;">${item.name}<br><span style="font-size:0.65em;font-weight:normal;opacity:0.75;">${item.subtitle}</span></span>`
+        : item.name;
+    return `
+    <div class="skills__data">
+        <div class="skills__titles">
+            <h3 class="skills__name"${style}>${nameHtml}</h3>
+            ${renderSkillIcon(item)}
+        </div>
+    </div>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    skillSections.forEach(({ id, items }) => {
+        const container = document.getElementById(id);
+        if (container) {
+            container.innerHTML = items.map(renderSkillItem).join('');
+        }
+    });
+});
+
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
@@ -45,7 +243,7 @@ const skillsContent = document.getElementsByClassName('skills__content'),
 function toggleSkills() {
     let itemClass = this.parentNode.className;
 
-    for (i = 0; i < skillsContent.length; i++) {
+    for (let i = 0; i < skillsContent.length; i++) {
         skillsContent[i].className = 'skills__content skills__close';
     }
 
@@ -117,7 +315,7 @@ const certificationContent = document.getElementsByClassName('certification__con
 function togglecertification() {
     let itemClass = this.parentNode.className;
 
-    for (i = 0; i < certificationContent.length; i++) {
+    for (let i = 0; i < certificationContent.length; i++) {
         certificationContent[i].className = 'certification__content certification__close';
     }
 
@@ -187,43 +385,42 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll("section[id]")
+// Cache DOM references once — avoid repeated querySelector on every scroll
+const headerEl = document.getElementById('header');
+const scrollUpEl = document.getElementById('scroll-up');
+const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
-    const scrollY = window.pageYOffset
-
+    const scrollY = window.pageYOffset;
     sections.forEach(current => {
-        const sectionHeight = current.offsetHeight
+        const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute("id")
-
+        const sectionId = current.getAttribute('id');
+        const link = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
+        if (!link) return;
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link")
+            link.classList.add('active-link');
         } else {
-            document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link")
+            link.classList.remove('active-link');
         }
-    })
+    });
 }
 
-window.addEventListener("scroll", scrollActive)
-
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
-    const nav = document.getElementById('header');
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-    if (this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header');
+    if (window.scrollY >= 80) {
+        headerEl.classList.add('scroll-header');
+    } else {
+        headerEl.classList.remove('scroll-header');
+    }
 }
-window.addEventListener('scroll', scrollHeader);
 
-
-/*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
-    const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if (this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
+    if (window.scrollY >= 560) {
+        scrollUpEl.classList.add('show-scroll');
+    } else {
+        scrollUpEl.classList.remove('show-scroll');
+    }
 }
-window.addEventListener('scroll', scrollUp);
 
 /*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById('theme-button')
@@ -274,35 +471,43 @@ sr.reveal('.work__img, .contact__input', { interval: 200 });
 const aboutImg = document.querySelector('.about__img');
 const homeImg = document.querySelector('.home__img');
 
-if (aboutImg || homeImg) {
-    window.addEventListener('scroll', () => {
-        // Only apply parallax on desktop
-        if (window.innerWidth < 768) {
-            if (aboutImg) aboutImg.style.transform = '';
-            if (homeImg) homeImg.style.transform = '';
-            return;
+function runParallax() {
+    // Only apply parallax on desktop
+    if (window.innerWidth < 768) {
+        if (aboutImg) aboutImg.style.transform = '';
+        if (homeImg) homeImg.style.transform = '';
+        return;
+    }
+    const windowHeight = window.innerHeight;
+    if (aboutImg) {
+        const section = aboutImg.closest('.about__container');
+        const sectionRect = section.getBoundingClientRect();
+        if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+            const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
+            aboutImg.style.transform = `translateY(${center * 0.1}px)`;
         }
-
-        const windowHeight = window.innerHeight;
-
-        if (aboutImg) {
-            const section = aboutImg.closest('.about__container');
-            const sectionRect = section.getBoundingClientRect();
-            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-                const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
-                const offset = center * 0.1;
-                aboutImg.style.transform = `translateY(${offset}px)`;
-            }
+    }
+    if (homeImg) {
+        const section = homeImg.closest('.home.section');
+        const sectionRect = section.getBoundingClientRect();
+        if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+            const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
+            homeImg.style.transform = `translateY(${center * 0.15}px)`;
         }
-
-        if (homeImg) {
-            const section = homeImg.closest('.home.section');
-            const sectionRect = section.getBoundingClientRect();
-            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-                const center = sectionRect.top + sectionRect.height / 2 - windowHeight / 2;
-                const offset = center * 0.15;
-                homeImg.style.transform = `translateY(${offset}px)`;
-            }
-        }
-    });
+    }
 }
+
+/*==================== SINGLE RAF-THROTTLED SCROLL LISTENER ====================*/
+let scrollTicking = false;
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        requestAnimationFrame(() => {
+            scrollActive();
+            scrollHeader();
+            scrollUp();
+            if (aboutImg || homeImg) runParallax();
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
+}, { passive: true });
