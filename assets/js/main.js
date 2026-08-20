@@ -22,20 +22,17 @@ const skillSections = [
             { name: 'JavaScript', icon: 'javascript' },
             { name: 'TypeScript', icon: 'typescript-icon' },
             { name: 'HTML', icon: 'html-5' },
-            { name: 'Shell', iconClass: 'devicon-powershell-plain colored' },
             { name: 'Groovy', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/groovy/groovy-original.svg' },
             { name: 'Dart', icon: 'dart' },
             { name: 'CSS', icon: 'css-3' },
             { name: 'Python', icon: 'python' },
             { name: 'YAML', icon: 'yaml' },
-            { name: '.NET', icon: 'dotnet' },
             { name: 'JSON', icon: 'json' }
         ]
     },
     {
         id: 'skills-engineering',
         items: [
-            { name: 'Appium', icon: 'appium' },
             { name: 'Cucumber', icon: 'cucumber' },
             { name: 'NodeJS', icon: 'nodejs-icon' },
             { name: 'Curl', icon: 'curl' },
@@ -49,7 +46,6 @@ const skillSections = [
             { name: 'GitHub Actions', icon: 'github-actions' },
             { name: 'Gitkraken', icon: 'gitkraken' },
             { name: 'Maven', icon: 'maven' },
-            { name: 'BDD/TDD' },
             { name: 'JUnit', iconClass: 'devicon-junit-plain colored' },
             { name: 'TestNG', iconUrl: 'https://avatars.githubusercontent.com/u/12528662?s=200&v=4' },
             { name: 'Log4J', icon: 'apache' },
@@ -58,12 +54,12 @@ const skillSections = [
             { name: 'Wiremock', iconUrl: 'https://avatars.githubusercontent.com/u/21368587?s=200&v=4' },
             { name: 'npm', icon: 'npm-icon' },
             { name: 'Babel', iconClass: 'devicon-babel-plain colored' },
-            { name: 'Firebase', icon: 'firebase-icon' },
             { name: 'GraphQL', icon: 'graphql' },
             { name: 'Docker', icon: 'docker-icon' },
             { name: 'Sonarqube', icon: 'sonarqube' },
             { name: 'Grafana', icon: 'grafana' },
             { name: 'Bash', icon: 'bash-icon' },
+            { name: 'Shell', iconClass: 'devicon-powershell-plain colored' },
             { name: 'Dynatrace', icon: 'dynatrace' },
             { name: 'ESLint', icon: 'eslint' },
             { name: 'Google Analytics', icon: 'google-analytics' },
@@ -71,17 +67,18 @@ const skillSections = [
             { name: 'Prettier', icon: 'prettier' },
             { name: 'Qlik', icon: 'qlik' },
             { name: 'Swagger', icon: 'swagger' },
+
         ]
     },
     {
         id: 'skills-ai-optimization',
         items: [
-            { name: 'AutoGen', iconUrl: 'https://camo.githubusercontent.com/2905ec919ee215233fc90a7fa9303c96f4526e9e25d9f0cd1d0cd590f4a6a5e1/68747470733a2f2f6d6963726f736f66742e6769746875622e696f2f6175746f67656e2f302e322f696d672f61672e737667' },
             { name: 'MCP', icon: 'mcp-icon' },
             { name: 'GitHub Copilot', icon: 'github-copilot' },
             { name: 'LangChain', icon: 'langchain' },
-            { name: 'Applitools', icon: 'applitools-icon' },
-            { name: 'ReportPortal', iconUrl: 'https://avatars.githubusercontent.com/u/17636279?s=200&v=4' },
+            { name: 'AutoGen', iconUrl: 'https://camo.githubusercontent.com/2905ec919ee215233fc90a7fa9303c96f4526e9e25d9f0cd1d0cd590f4a6a5e1/68747470733a2f2f6d6963726f736f66742e6769746875622e696f2f6175746f67656e2f302e322f696d672f61672e737667' },
+
+
         ]
     },
     {
@@ -97,9 +94,11 @@ const skillSections = [
         id: 'skills-frameworks',
         items: [
             { name: 'Selenium', icon: 'selenium' },
+            { name: 'Appium', icon: 'appium' },
             { name: 'WebdriverIO', iconUrl: 'https://raw.githubusercontent.com/webdriverio/webdriverio/master/website/static/img/webdriverio.png' },
             { name: 'Playwright', icon: 'playwright' },
             { name: 'Flutter Integration Test', icon: 'flutter', nameStyle: 'font-size:0.75em;' },
+            { name: 'Puppeteer', icon: 'puppeteer' },
             { name: 'Cinnamon' },
             { name: 'REST-Assured', iconUrl: 'https://avatars.githubusercontent.com/u/19369327?s=200&v=4' },
             { name: 'Carina', iconUrl: 'https://avatars.githubusercontent.com/u/59013197?s=200&v=4' },
@@ -125,11 +124,14 @@ const skillSections = [
             { name: 'Confluence', icon: 'confluence' },
             { name: 'Slack', icon: 'slack-icon' },
             { name: 'Trello', icon: 'trello' },
+            { name: 'ReportPortal', iconUrl: 'https://avatars.githubusercontent.com/u/17636279?s=200&v=4' },
+            { name: 'Applitools', icon: 'applitools-icon' },
         ]
     },
     {
         id: 'skills-cloud',
         items: [
+            { name: 'Firebase', icon: 'firebase-icon' },
             { name: 'Perfecto', iconUrl: 'https://avatars.githubusercontent.com/u/17961151?s=200&v=4' },
             { name: 'Headspin', iconUrl: 'https://avatars.githubusercontent.com/u/104040852?s=200&v=4' },
             { name: 'Saucelabs', iconUrl: 'https://avatars.githubusercontent.com/u/88837?s=200&v=4' },
@@ -148,13 +150,14 @@ const skillSections = [
             { name: 'React', iconClass: 'devicon-react-original colored' },
             { name: 'Cordova', icon: 'cordova' },
             { name: 'Algolia', icon: 'algolia-icon' },
+            { name: '.NET', icon: 'dotnet' },
         ]
     },
     {
         id: 'skills-databases',
         items: [
             { name: 'MongoDB', icon: 'mongodb-icon' },
-            { name: 'Kibana', icon: 'kibana' },
+            { name: 'Elasticsearch', icon: 'elasticsearch' },
         ]
     },
     {
@@ -464,7 +467,7 @@ const sr = ScrollReveal({
 sr.reveal('.home__container, .about__container, .skills__container, .skills__subtitle, .skills__text, .qualification__container, .portfolio__container, .clients__container, .hobbies__container, .contact__container, .certification__container', {});
 sr.reveal('.about__subtitle, .about__text, .skills__img, .contact__subtitle, .qualification__sections', { delay: 400 });
 sr.reveal('.home__social, .about__info', { interval: 200 });
-sr.reveal('.work__img, .contact__input', { interval: 200 }); 
+sr.reveal('.work__img, .contact__input', { interval: 200 });
 
 
 /*==================== PARALLAX ABOUT IMAGE ====================*/
