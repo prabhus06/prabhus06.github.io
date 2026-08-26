@@ -77,7 +77,12 @@ const skillSections = [
             { name: 'GitHub Copilot', icon: 'github-copilot' },
             { name: 'LangChain', icon: 'langchain' },
             { name: 'AutoGen', iconUrl: 'https://camo.githubusercontent.com/2905ec919ee215233fc90a7fa9303c96f4526e9e25d9f0cd1d0cd590f4a6a5e1/68747470733a2f2f6d6963726f736f66742e6769746875622e696f2f6175746f67656e2f302e322f696d672f61672e737667' },
-
+            { name: 'Antigravity', iconUrl: "https://avatars.githubusercontent.com/u/242056456?s=200&v=4" },
+            { name: 'Kiro', iconUrl: "https://avatars.githubusercontent.com/u/207925904?s=200&v=4" },
+            { name: 'JetBrains', icon: 'jetbrains-icon' },
+            { name: 'VS Code', iconClass: 'devicon-vscode-plain colored' },
+            { name: 'Claude', icon: 'claude-icon' },
+            { name: 'Cursor', icon: 'cursor-icon' }
 
         ]
     },
