@@ -140,8 +140,7 @@ const skillSections = [
             { name: 'Perfecto', iconUrl: 'https://avatars.githubusercontent.com/u/17961151?s=200&v=4' },
             { name: 'Headspin', iconUrl: 'https://avatars.githubusercontent.com/u/104040852?s=200&v=4' },
             { name: 'Saucelabs', iconUrl: 'https://avatars.githubusercontent.com/u/88837?s=200&v=4' },
-            { name: 'BrowserStack', iconClass: 'devicon-browserstack-plain colored' },
-            { name: 'AWS', icon: 'aws' },
+            { name: 'BrowserStack', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg' }, { name: 'AWS', icon: 'aws' },
         ]
     },
     {
@@ -152,7 +151,7 @@ const skillSections = [
             { name: 'iOS', icon: 'apple' },
             { name: 'Android', icon: 'android' },
             { name: 'Hybris', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/c/ca/Hybris_company_%28SAP%29_logo.jpg' },
-            { name: 'React', iconClass: 'devicon-react-original colored' },
+            { name: 'React', icon: 'react' },
             { name: 'Cordova', icon: 'cordova' },
             { name: 'Algolia', icon: 'algolia-icon' },
             { name: '.NET', icon: 'dotnet' },
