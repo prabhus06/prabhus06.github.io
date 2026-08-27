@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const SHELL_CACHE = `prabhu-portfolio-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `prabhu-portfolio-images-${CACHE_VERSION}`;
 
@@ -15,8 +15,7 @@ const SHELL_URLS = [
 const IMAGE_URLS = [
     '/assets/img/perfil.png',
     '/assets/img/about.png',
-    '/assets/img/ps.jpeg',
-    '/assets/img/DLG.svg'
+    '/assets/img/ps.jpeg'
 ];
 
 // Install — pre-cache shell and images separately
