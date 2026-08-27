@@ -38,7 +38,7 @@
     <link rel="apple-touch-icon" href="assets/img/ps.jpeg">
 
     <!--==================== ICON ====================-->
-    <link rel="icon" href="assets/img/DLG.svg">
+    <link rel="icon" type="image/jpeg" href="assets/img/ps.jpeg">
 
     <!--==================== PRELOAD CRITICAL ASSETS ====================-->
     <link rel="preload" as="image" href="assets/img/perfil.png">
@@ -409,7 +409,7 @@
         </section>
 
         <!--==================== QUALIFICATION ====================-->
-        <section class="qualification section">
+        <section class="qualification section" id="qualification">
             <h2 class="section__title">Qualification</h2>
             <span class="section__subtitle">My story</span>
 
@@ -428,9 +428,7 @@
                 <div class="qualification__sections">
                     <!--===============================QUALIFICATION CONTENT 1 ===========================-->
                     <div class="qualification__content qualification__active" data-content id="work">
-                        <span class="qualificationTab__subtitle">
-                            <a> Clients</a>
-                        </span>
+                        <h4 class="qualificationTab__subtitle">Clients</h4>
                         <!--===============================QUALIFICATION 1 ===========================-->
                         <div class="qualification__data">
                             <div>
@@ -564,18 +562,16 @@
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
-                        <!--===============================Company 7 ===========================-->
-                        <div>
-                            <span class="qualificationTab__subtitle"><br>
-                                <h3 class="qualification__title">QA Delivery Manager</h3>
-                                <span class="qualification__subtitle">
-                                    <br><a href="https://uk.nttdata.com/" target="_blank">NTT DATA UK&I</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Jan 2010 - Present
-                                </div>
+                        <!--=============================== Company (Employer) ===========================-->
+                        <div class="qualificationTab__subtitle">
+                            <h3 class="qualification__title">QA Engineering Manager</h3>
+                            <span class="qualification__subtitle">
+                                <a href="https://uk.nttdata.com/" target="_blank" rel="noopener noreferrer">NTT DATA UK&I</a>
                             </span>
+                            <div class="qualification__calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Jan 2010 - Present
+                            </div>
                         </div>
                     </div>
                     <!--===============================QUALIFICATION CONTENT 2 ===========================-->
@@ -749,7 +745,7 @@
         </section>
 
         <!--==================== HOBBIES ====================-->
-        <section class="hobbies section">
+        <section class="hobbies section" id="hobbies">
             <h2 class="section__title">Hobbies</h2>
             <span class="section__subtitle">What are my other interests</span>
 
