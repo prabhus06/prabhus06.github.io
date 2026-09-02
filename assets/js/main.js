@@ -518,3 +518,44 @@ window.addEventListener('scroll', () => {
         scrollTicking = true;
     }
 }, { passive: true });
+
+/*==================== HASH SCROLL ON LOAD ====================*/
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        try {
+            const targetSection = document.querySelector(window.location.hash);
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+        } catch (e) {}
+    }
+});
+
+/*==================== AMBIENT CURSOR GLOW ====================*/
+const ambientGlow = document.getElementById('ambient-glow');
+if (ambientGlow && window.matchMedia('(hover: hover)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+    let moved = false;
+
+    window.addEventListener('pointermove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!moved) {
+            document.body.classList.add('has-moved');
+            moved = true;
+        }
+    }, { passive: true });
+
+    function renderAmbientGlow() {
+        currentX += (mouseX - currentX) * 0.6;
+        currentY += (mouseY - currentY) * 0.6;
+        ambientGlow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(renderAmbientGlow);
+    }
+    requestAnimationFrame(renderAmbientGlow);
+}
