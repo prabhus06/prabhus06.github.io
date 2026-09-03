@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Title UI Options Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0047FF;
+            --color-primary-glow: rgba(0, 71, 255, 0.35);
+            --color-bg: #050505;
+            --color-surface: #141414;
+            --color-border: #222222;
+            --color-text: #F5F5F5;
+            --color-muted: #888888;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-display);
+            padding: 48px 24px;
+            line-height: 1.6;
+        }
+
+        .header-wrap {
+            max-width: 1200px;
+            margin: 0 auto 48px;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 32px;
+        }
+
+        .header-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--color-primary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .header-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .options-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .option-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 36px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 30px var(--color-primary-glow);
+        }
+
+        .option-header {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 16px;
+            margin-bottom: 36px;
+        }
+
+        .option-num {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--color-primary);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .option-desc {
+            font-size: 14px;
+            color: var(--color-muted);
+            margin-top: 4px;
+        }
+
+        /* SAMPLE PREVIEW BOX */
+        .preview-box {
+            background: #090909;
+            border: 1px solid #1c1c1c;
+            padding: 36px 20px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        /* -------------------------------------------------------------
+           OPTION 1: Kinetic Numbered Engineering Headings
+           ------------------------------------------------------------- */
+        .opt1-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .opt1-title .num {
+            color: var(--color-primary);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .opt1-subtitle {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        /* -------------------------------------------------------------
+           OPTION 2: Monospace Badge Pill Above Title
+           ------------------------------------------------------------- */
+        .opt2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 71, 255, 0.1);
+            border: 1px solid rgba(0, 71, 255, 0.4);
+            color: var(--color-primary);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            margin-bottom: 12px;
+        }
+
+        .opt2-badge .dot {
+            width: 5px;
+            height: 5px;
+            background: var(--color-primary);
+            box-shadow: 0 0 6px var(--color-primary);
+            display: inline-block;
+        }
+
+        .opt2-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: 6px;
+        }
+
+        .opt2-subtitle {
+            font-size: 13px;
+            color: var(--color-muted);
+            font-weight: 400;
+        }
+
+        /* -------------------------------------------------------------
+           OPTION 3: Minimalist Bracket / Accent Line
+           ------------------------------------------------------------- */
+        .opt3-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .opt3-title .bracket {
+            color: var(--color-primary);
+        }
+
+        .opt3-subtitle {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .opt3-subtitle::before, .opt3-subtitle::after {
+            content: '';
+            width: 16px;
+            height: 1px;
+            background: rgba(0, 71, 255, 0.5);
+        }
+
+        /* Sample Body Snippet */
+        .sample-content {
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px dashed #222;
+            padding-top: 16px;
+            text-align: left;
+        }
+
+        .btn-select {
+            margin-top: auto;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover .btn-select {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #050505;
+        }
+
+        @media (max-width: 992px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-wrap">
+        <div class="header-badge">[ TITLE DESIGN SYSTEM // 3 CONCEPTS ]</div>
+        <h1 class="header-title">Section Title Options for Portfolio</h1>
+        <p style="color: var(--color-muted); font-size: 15px; margin-top: 8px;">
+            Comparing 3 UI styles for section headings (About Me, Skills, Timeline, Portfolio)
+        </p>
+    </div>
+
+    <div class="options-grid">
+
+        <!-- ==================== OPTION 1 ==================== -->
+        <div class="option-card">
+            <div class="option-header">
+                <div class="option-num">OPTION 01</div>
+                <div class="option-desc">Numbered Engineering Headings</div>
+            </div>
+
+            <!-- Preview 1: About Me -->
+            <div class="preview-box">
+                <h2 class="opt1-title"><span class="num">01 //</span> ABOUT ME</h2>
+                <span class="opt1-subtitle">EXECUTIVE LEADERSHIP &amp; BACKGROUND</span>
+            </div>
+
+            <!-- Preview 2: Skills -->
+            <div class="preview-box">
+                <h2 class="opt1-title"><span class="num">02 //</span> SKILLS</h2>
+                <span class="opt1-subtitle">TECHNICAL MATRIX &amp; AUTOMATION</span>
+            </div>
+
+            <div class="sample-content">
+                <strong>Vibe:</strong> High-impact, technical index structure matching Kinetic's `01 / QE PHILOSOPHY` panels.
+            </div>
+
+            <div class="btn-select">OPTION 1 &bull; NUMBERED HEADINGS</div>
+        </div>
+
+        <!-- ==================== OPTION 2 ==================== -->
+        <div class="option-card">
+            <div class="option-header">
+                <div class="option-num">OPTION 02</div>
+                <div class="option-desc">Monospace Badge Pill Above Title</div>
+            </div>
+
+            <!-- Preview 1: About Me -->
+            <div class="preview-box">
+                <div class="opt2-badge"><span class="dot"></span> 01 // PROFILE</div>
+                <h2 class="opt2-title">About Me</h2>
+                <span class="opt2-subtitle">Executive Leadership &amp; Background</span>
+            </div>
+
+            <!-- Preview 2: Skills -->
+            <div class="preview-box">
+                <div class="opt2-badge"><span class="dot"></span> 02 // CAPABILITIES</div>
+                <h2 class="opt2-title">Skills</h2>
+                <span class="opt2-subtitle">Technical Matrix &amp; Automation</span>
+            </div>
+
+            <div class="sample-content">
+                <strong>Vibe:</strong> Contemporary SaaS telemetry aesthetic with illuminated status pills.
+            </div>
+
+            <div class="btn-select">OPTION 2 &bull; TELEMETRY BADGES</div>
+        </div>
+
+        <!-- ==================== OPTION 3 ==================== -->
+        <div class="option-card">
+            <div class="option-header">
+                <div class="option-num">OPTION 03</div>
+                <div class="option-desc">Minimalist Bracket &amp; Accent Line</div>
+            </div>
+
+            <!-- Preview 1: About Me -->
+            <div class="preview-box">
+                <h2 class="opt3-title"><span class="bracket">[</span> ABOUT ME <span class="bracket">]</span></h2>
+                <span class="opt3-subtitle">EXECUTIVE PROFILE</span>
+            </div>
+
+            <!-- Preview 2: Skills -->
+            <div class="preview-box">
+                <h2 class="opt3-title"><span class="bracket">[</span> SKILLS <span class="bracket">]</span></h2>
+                <span class="opt3-subtitle">TECHNICAL MATRIX</span>
+            </div>
+
+            <div class="sample-content">
+                <strong>Vibe:</strong> Architectural minimalism using Kinetic's `[PRABHU S]` bracket motif with beam rules.
+            </div>
+
+            <div class="btn-select">OPTION 3 &bull; BRACKET MOTIF</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

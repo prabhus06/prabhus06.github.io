@@ -140,8 +140,7 @@ const skillSections = [
             { name: 'Perfecto', iconUrl: 'https://avatars.githubusercontent.com/u/17961151?s=200&v=4' },
             { name: 'Headspin', iconUrl: 'https://avatars.githubusercontent.com/u/104040852?s=200&v=4' },
             { name: 'Saucelabs', iconUrl: 'https://avatars.githubusercontent.com/u/88837?s=200&v=4' },
-            { name: 'BrowserStack', iconClass: 'devicon-browserstack-plain colored' },
-            { name: 'AWS', icon: 'aws' },
+            { name: 'BrowserStack', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg' }, { name: 'AWS', icon: 'aws' },
         ]
     },
     {
@@ -152,7 +151,7 @@ const skillSections = [
             { name: 'iOS', icon: 'apple' },
             { name: 'Android', icon: 'android' },
             { name: 'Hybris', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/c/ca/Hybris_company_%28SAP%29_logo.jpg' },
-            { name: 'React', iconClass: 'devicon-react-original colored' },
+            { name: 'React', icon: 'react' },
             { name: 'Cordova', icon: 'cordova' },
             { name: 'Algolia', icon: 'algolia-icon' },
             { name: '.NET', icon: 'dotnet' },
@@ -519,3 +518,44 @@ window.addEventListener('scroll', () => {
         scrollTicking = true;
     }
 }, { passive: true });
+
+/*==================== HASH SCROLL ON LOAD ====================*/
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        try {
+            const targetSection = document.querySelector(window.location.hash);
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+        } catch (e) {}
+    }
+});
+
+/*==================== AMBIENT CURSOR GLOW ====================*/
+const ambientGlow = document.getElementById('ambient-glow');
+if (ambientGlow && window.matchMedia('(hover: hover)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+    let moved = false;
+
+    window.addEventListener('pointermove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!moved) {
+            document.body.classList.add('has-moved');
+            moved = true;
+        }
+    }, { passive: true });
+
+    function renderAmbientGlow() {
+        currentX += (mouseX - currentX) * 0.6;
+        currentY += (mouseY - currentY) * 0.6;
+        ambientGlow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(renderAmbientGlow);
+    }
+    requestAnimationFrame(renderAmbientGlow);
+}

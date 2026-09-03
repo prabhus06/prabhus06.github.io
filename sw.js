@@ -1,11 +1,14 @@
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v9';
 const SHELL_CACHE = `prabhu-portfolio-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `prabhu-portfolio-images-${CACHE_VERSION}`;
 
 const SHELL_URLS = [
     '/',
     '/index.html',
+    '/portfolio.html',
     '/assets/css/styles.css',
+    '/assets/css/kinetic.css',
+    '/assets/js/kinetic.js',
     '/assets/css/swiper-bundle.min.css',
     '/assets/js/main.js',
     '/assets/js/swiper-bundle.min.js',
@@ -15,6 +18,7 @@ const SHELL_URLS = [
 const IMAGE_URLS = [
     '/assets/img/perfil.png',
     '/assets/img/about.png',
+    '/assets/img/about-core.jpg',
     '/assets/img/ps.jpeg'
 ];
 
