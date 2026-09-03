@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const SHELL_CACHE = `prabhu-portfolio-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `prabhu-portfolio-images-${CACHE_VERSION}`;
 
@@ -18,6 +18,7 @@ const SHELL_URLS = [
 const IMAGE_URLS = [
     '/assets/img/perfil.png',
     '/assets/img/about.png',
+    '/assets/img/about-core.jpg',
     '/assets/img/ps.jpeg'
 ];
 
