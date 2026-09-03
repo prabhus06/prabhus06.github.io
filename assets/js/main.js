@@ -217,29 +217,60 @@ const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close');
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
+function setMenuState(open) {
+    if (!navMenu) return;
+    if (open) {
         navMenu.classList.add('show-menu');
-    })
+        if (navToggle) {
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.remove('uil-apps');
+                icon.classList.add('uil-times');
+            }
+        }
+    } else {
+        navMenu.classList.remove('show-menu');
+        if (navToggle) {
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.remove('uil-times');
+                icon.classList.add('uil-apps');
+            }
+        }
+    }
 }
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
-    })
+/*===== MENU TOGGLE =====*/
+if (navToggle) {
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navMenu.classList.contains('show-menu');
+        setMenuState(!isOpen);
+    });
 }
+
+/*===== MENU CLOSE BUTTON =====*/
+if (navClose) {
+    navClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMenuState(false);
+    });
+}
+
+/* Close menu when clicking outside */
+document.addEventListener('click', (e) => {
+    if (navMenu && navMenu.classList.contains('show-menu')) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            setMenuState(false);
+        }
+    }
+});
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction() {
-    const navMenu = document.getElementById('nav-menu');
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu');
+    setMenuState(false);
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
