@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v11';
+const CACHE_VERSION = 'v19';
 const SHELL_CACHE = `prabhu-portfolio-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `prabhu-portfolio-images-${CACHE_VERSION}`;
 
@@ -8,7 +8,9 @@ const SHELL_URLS = [
     '/portfolio.html',
     '/assets/css/styles.css',
     '/assets/css/kinetic.css',
+    '/assets/css/kinetic-certifications.css',
     '/assets/js/kinetic.js',
+    '/assets/js/kinetic-certifications.js',
     '/assets/css/swiper-bundle.min.css',
     '/assets/js/main.js',
     '/assets/js/swiper-bundle.min.js',
@@ -16,10 +18,16 @@ const SHELL_URLS = [
 ];
 
 const IMAGE_URLS = [
+    '/assets/img/icon-192.png',
+    '/assets/img/icon-512.png',
     '/assets/img/perfil.png',
     '/assets/img/about.png',
     '/assets/img/about-core.jpg',
-    '/assets/img/ps.jpeg'
+    '/assets/img/about-shield.jpg',
+    '/assets/img/ps.jpeg',
+    '/assets/img/EE_logo.png',
+    '/assets/img/ISTQB.png',
+    '/assets/img/Badges_v8-07_Practitioner.png'
 ];
 
 // Install — pre-cache shell and images separately
