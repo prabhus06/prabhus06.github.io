@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v11';
+const CACHE_VERSION = 'v18';
 const SHELL_CACHE = `prabhu-portfolio-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `prabhu-portfolio-images-${CACHE_VERSION}`;
 
