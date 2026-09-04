@@ -1,0 +1,598 @@
+/* ==========================================================================
+   ANTIGRAVITY KINETIC CERTIFICATIONS STREAM & TELEMETRY HUD
+   Responsive Theme Engine (Adaptive Light Mode & Dark Mode)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. COLOR TOKENS (LIGHT MODE DEFAULT)
+   -------------------------------------------------------------------------- */
+:root {
+  --kinetic-bg: transparent;
+  --kinetic-surface: #FFFFFF;
+  --kinetic-surface-alt: transparent;
+  --kinetic-surface-hover: #F8FAFC;
+  --kinetic-border: #E2E8F0;
+  --kinetic-border-light: #CBD5E1;
+  --kinetic-accent: #0047FF;
+  --kinetic-accent-glow: rgba(0, 71, 255, 0.22);
+  --kinetic-text: #0F172A;
+  --kinetic-silver: #475569;
+  --kinetic-muted: #64748B;
+  --kinetic-green: #059669;
+  --kinetic-grid-color: transparent;
+  --kinetic-fade-bg: var(--body-color, #fbfcfe);
+  --kinetic-chip-bg: #FFFFFF;
+  --kinetic-chip-border: #E2E8F0;
+  --kinetic-param-bg: #F8FAFC;
+  --kinetic-shadow: none;
+  --kinetic-card-shadow: 0 4px 20px rgba(0, 71, 255, 0.05);
+  --kinetic-card-shadow-hover: 0 12px 30px rgba(0, 71, 255, 0.14), 0 0 1px #0047FF;
+  --kinetic-modal-overlay-bg: rgba(15, 23, 42, 0.6);
+  --kinetic-modal-card-bg: #FFFFFF;
+  --kinetic-modal-param-bg: #F8FAFC;
+
+  --kinetic-font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  --kinetic-font-display: 'Syne', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --kinetic-font-body: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --kinetic-radius: 0px;
+
+  /* Marquee speed variables */
+  --stream-duration: 38s;
+  --stream-telemetry-duration: 24s;
+  --stream-play-state: running;
+}
+
+/* --------------------------------------------------------------------------
+   2. COLOR TOKENS (DARK MODE)
+   -------------------------------------------------------------------------- */
+body.dark-theme {
+  --kinetic-bg: transparent;
+  --kinetic-surface: #141414;
+  --kinetic-surface-alt: transparent;
+  --kinetic-surface-hover: #1b1b1b;
+  --kinetic-border: #2a2a2a;
+  --kinetic-border-light: #393939;
+  --kinetic-accent: #0047FF;
+  --kinetic-accent-glow: rgba(0, 71, 255, 0.4);
+  --kinetic-text: #F5F5F5;
+  --kinetic-silver: #9E9E9E;
+  --kinetic-muted: #666666;
+  --kinetic-green: #00FF66;
+  --kinetic-grid-color: transparent;
+  --kinetic-fade-bg: var(--body-color, #050505);
+  --kinetic-chip-bg: #141414;
+  --kinetic-chip-border: #2a2a2a;
+  --kinetic-param-bg: #0d0d0d;
+  --kinetic-shadow: none;
+  --kinetic-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --kinetic-card-shadow-hover: 0 12px 30px rgba(0, 71, 255, 0.18), 0 0 1px var(--kinetic-accent);
+  --kinetic-modal-overlay-bg: rgba(5, 5, 5, 0.88);
+  --kinetic-modal-card-bg: #111111;
+  --kinetic-modal-param-bg: #090909;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE CONTAINER & GRID
+   -------------------------------------------------------------------------- */
+.kinetic-cert-root {
+  position: relative;
+  width: calc(100% - 3rem);
+  max-width: 1200px;
+  background-color: transparent;
+  color: var(--kinetic-text);
+  font-family: var(--kinetic-font-body);
+  border-top: 1px solid var(--kinetic-border);
+  border-bottom: 1px solid var(--kinetic-border);
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 20px auto 36px;
+  border-radius: var(--kinetic-radius);
+  background-image: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.kinetic-cert-root *,
+.kinetic-cert-root *::before,
+.kinetic-cert-root *::after {
+  box-sizing: border-box;
+  border-radius: var(--kinetic-radius) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. STREAM TRACK WRAPPERS & LTR MARQUEE ANIMATION
+   -------------------------------------------------------------------------- */
+.stream-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.stream-track-wrapper::before,
+.stream-track-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 10;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.stream-track-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--kinetic-fade-bg) 0%, transparent 100%);
+}
+
+.stream-track-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--kinetic-fade-bg) 0%, transparent 100%);
+}
+
+.stream-marquee-ltr {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: var(--stream-play-state);
+}
+
+/* Pause on hover across all streams */
+.stream-track-wrapper:hover .stream-marquee-ltr {
+  animation-play-state: paused !important;
+}
+
+/* Left-to-Right infinite animation */
+@keyframes stream-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. STREAM LAYER 1: FAST TELEMETRY DATA STRIP (LTR)
+   -------------------------------------------------------------------------- */
+.stream-layer-telemetry {
+  background: var(--kinetic-surface-alt);
+  border-bottom: 1px solid var(--kinetic-border);
+  padding: 10px 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.stream-layer-telemetry .stream-marquee-ltr {
+  animation-name: stream-ltr;
+  animation-duration: var(--stream-telemetry-duration);
+  gap: 20px;
+}
+
+.telemetry-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--kinetic-font-mono);
+  font-size: 11px;
+  color: var(--kinetic-silver);
+  padding: 4px 12px;
+  background: var(--kinetic-chip-bg);
+  border: 1px solid var(--kinetic-chip-border);
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+}
+
+.telemetry-chip:hover {
+  color: var(--kinetic-text);
+  border-color: var(--kinetic-accent);
+  background: var(--kinetic-surface-hover);
+}
+
+.telemetry-chip .val-highlight {
+  color: var(--kinetic-accent);
+  font-weight: 700;
+}
+
+.telemetry-chip .sep {
+  color: var(--kinetic-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. STREAM LAYER 2: MODULAR ARCHITECTURE MATRIX (LTR)
+   -------------------------------------------------------------------------- */
+.stream-layer-modules {
+  background: var(--kinetic-bg);
+  padding: 32px 0;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.stream-layer-modules .stream-marquee-ltr {
+  animation-name: stream-ltr;
+  animation-duration: var(--stream-duration);
+  gap: 28px;
+  padding: 8px 0;
+}
+
+/* Structured Module Card */
+.kinetic-module-card {
+  width: 360px;
+  background: var(--kinetic-surface);
+  border: 1px solid var(--kinetic-border);
+  box-shadow: var(--kinetic-card-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.kinetic-module-card:hover {
+  transform: scale(1.02);
+  border-color: var(--kinetic-accent);
+  box-shadow: var(--kinetic-card-shadow-hover);
+  background: var(--kinetic-surface-hover);
+  z-index: 5;
+}
+
+.module-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.module-tag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.module-id {
+  font-family: var(--kinetic-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--kinetic-accent);
+  letter-spacing: 0.1em;
+}
+
+.module-category {
+  font-family: var(--kinetic-font-mono);
+  font-size: 10px;
+  color: var(--kinetic-silver);
+  text-transform: uppercase;
+}
+
+.module-status-indicator {
+  font-family: var(--kinetic-font-mono);
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--kinetic-border-light);
+  background: var(--kinetic-surface-alt);
+  color: var(--kinetic-silver);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.module-icon-badge {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--kinetic-border);
+  background: var(--kinetic-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kinetic-text);
+  font-size: 19px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.module-icon-badge img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.module-title {
+  font-family: var(--kinetic-font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--kinetic-text);
+  line-height: 1.3;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+/* Technical Parameters Table */
+.module-parameters {
+  background: var(--kinetic-param-bg);
+  border: 1px solid var(--kinetic-border);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.param-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--kinetic-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+.param-key {
+  color: var(--kinetic-muted);
+}
+
+.param-value {
+  color: var(--kinetic-text);
+  font-weight: 600;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+.param-value.highlight {
+  color: var(--kinetic-accent);
+  font-weight: 700;
+}
+
+.module-description {
+  font-size: 13px;
+  color: var(--kinetic-silver);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.module-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--kinetic-border);
+  font-family: var(--kinetic-font-mono);
+  font-size: 11px;
+  transition: border-color 0.3s ease;
+}
+
+.module-issuer {
+  color: var(--kinetic-muted);
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.module-action-btn {
+  color: var(--kinetic-accent);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.kinetic-module-card:hover .module-action-btn {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   7. TELEMETRY INSPECTOR MODAL
+   -------------------------------------------------------------------------- */
+.kinetic-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--kinetic-modal-overlay-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kinetic-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.kinetic-modal-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--kinetic-modal-card-bg);
+  border: 1px solid var(--kinetic-accent);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 20px var(--kinetic-accent-glow);
+  padding: 32px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+  color: var(--kinetic-text);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.kinetic-modal-overlay.active .kinetic-modal-card {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--kinetic-surface-alt);
+  border: 1px solid var(--kinetic-border);
+  color: var(--kinetic-text);
+  font-family: var(--kinetic-font-mono);
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--kinetic-accent);
+  color: #FFFFFF;
+  border-color: var(--kinetic-accent);
+}
+
+.modal-hud-tag {
+  font-family: var(--kinetic-font-mono);
+  font-size: 11px;
+  color: var(--kinetic-accent);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+
+.modal-headline {
+  font-family: var(--kinetic-font-display);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: var(--kinetic-text);
+}
+
+.modal-params-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  background: var(--kinetic-modal-param-bg);
+  border: 1px solid var(--kinetic-border);
+  padding: 14px;
+}
+
+.modal-param-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--kinetic-font-mono);
+}
+
+.modal-param-label {
+  font-size: 10px;
+  color: var(--kinetic-muted);
+  text-transform: uppercase;
+}
+
+.modal-param-val {
+  font-size: 12px;
+  color: var(--kinetic-text);
+  font-weight: 600;
+}
+
+.modal-body-text {
+  font-size: 14px;
+  color: var(--kinetic-silver);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.modal-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--kinetic-border);
+  padding-top: 20px;
+}
+
+.modal-btn {
+  font-family: var(--kinetic-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 10px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.modal-btn-secondary {
+  background: var(--kinetic-surface-alt);
+  border: 1px solid var(--kinetic-border);
+  color: var(--kinetic-silver);
+}
+
+.modal-btn-secondary:hover {
+  border-color: var(--kinetic-border-light);
+  color: var(--kinetic-text);
+}
+
+.modal-btn-primary {
+  background: var(--kinetic-accent);
+  border: 1px solid var(--kinetic-accent);
+  color: #FFFFFF;
+  box-shadow: 0 0 16px var(--kinetic-accent-glow);
+}
+
+.modal-btn-primary:hover {
+  background: #0037c7;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+  .kinetic-module-card {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .kinetic-cert-root {
+    width: calc(100% - 1.5rem);
+    margin: 16px auto 32px;
+  }
+  .modal-params-grid {
+    grid-template-columns: 1fr;
+  }
+  .kinetic-module-card {
+    width: 290px;
+    padding: 18px;
+  }
+}

@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <!--==================== DARK THEME (must run before styles to prevent flash) ====================-->
+    <!--==================== DARK THEME PRELOAD ====================-->
     <script>
         if (localStorage.getItem('selected-theme') === 'dark') {
-            document.documentElement.classList.add('dark-theme-preload');
-            document.body && document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
         }
     </script>
 
@@ -35,10 +34,10 @@
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="assets/img/ps.jpeg">
+    <link rel="apple-touch-icon" href="assets/img/icon-192.png">
 
     <!--==================== ICON ====================-->
-    <link rel="icon" type="image/jpeg" href="assets/img/ps.jpeg">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
 
     <!--==================== PRELOAD CRITICAL ASSETS ====================-->
     <link rel="preload" as="image" href="assets/img/perfil.png">
@@ -63,8 +62,9 @@
 
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/kinetic-certifications.css">
 
-    <title>Prabhu S</title>
+    <title>Prabhu S — QA Engineering Manager &amp; Quality Leader | Portfolio</title>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -627,130 +627,754 @@
             <h2 class="section__title"><span class="bracket">[</span> Clients <span class="bracket">]</span></h2>
             <span class="section__subtitle">Enterprise Track Record</span>
             <div class="clients__container container grid">
-
-                <!--==================== Clients 2 ====================-->
                 <div class="clients__content">
                     <div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/EE_logo.svg/250px-EE_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-                            alt="" class="ee__img">
+                        <img src="assets/img/EE_logo.png" alt="EE (Everything Everywhere) Telecom" class="ee__img">
                     </div>
                 </div>
 
-                <!--==================== Clients 2 ====================-->
                 <div class="clients__content">
                     <div>
-                        <img src="https://avatars.githubusercontent.com/u/18679753?s=200&v=4" alt=""
-                            class="clients__img">
-
+                        <img src="https://avatars.githubusercontent.com/u/18679753?s=200&v=4" alt="Enterprise Retail Client Partner" class="clients__img">
                     </div>
                 </div>
-                <!--==================== Clients 1 ====================-->
+
                 <div class="clients__content">
                     <div>
-                        <img src="https://avatars.githubusercontent.com/u/1506386?s=200&v=4" alt=""
-                            class="clients__img">
+                        <img src="https://avatars.githubusercontent.com/u/1506386?s=200&v=4" alt="Global Technology Solutions Client" class="clients__img">
                     </div>
                 </div>
-                <!--==================== Clients 2 ====================-->
+
                 <div class="clients__content">
                     <div>
-                        <img src="https://avatars.githubusercontent.com/u/483040?s=200&v=4" alt="" class="clients__img">
-
+                        <img src="https://avatars.githubusercontent.com/u/483040?s=200&v=4" alt="Enterprise Financial Client Partner" class="clients__img">
                     </div>
                 </div>
-                <!--==================== Clients 2 ====================-->
+
                 <div class="clients__content">
                     <div>
-                        <img src="https://avatars.githubusercontent.com/u/87132606?s=200&v=4" alt=""
-                            class="clients__img">
-
+                        <img src="https://avatars.githubusercontent.com/u/87132606?s=200&v=4" alt="Digital Transformation Client Partner" class="clients__img">
                     </div>
                 </div>
             </div>
         </section>
 
         <!--==================== CERTIFICATIONS ====================-->
-        <section class="certifications section" id="certifications">
+        <section class="certifications section" id="certifications" style="padding-bottom: 30px;">
             <h2 class="section__title"><span class="bracket">[</span> Certifications <span class="bracket">]</span></h2>
             <span class="section__subtitle">Verified Credentials</span>
 
-            <div class="certification__container container grid">
+            <!-- MAIN KINETIC CERTIFICATIONS STREAM ROOT -->
+            <div class="kinetic-cert-root">
 
-                <!--==================== certification 1 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">ISTQB Certified Tester</h3>
+                <!-- 1. STREAM LAYER 1: FAST TELEMETRY DATA STRIP (LTR) -->
+                <div class="stream-track-wrapper stream-layer-telemetry">
+                    <div class="stream-marquee-ltr">
+                        <!-- SET 1 -->
+                        <div class="telemetry-chip">
+                            <span>ISTQB_CTFL:</span>
+                            <span class="val-highlight">VERIFIED // FOUNDATION-LEVEL</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>TRICENTIS_TOSCA:</span>
+                            <span class="val-highlight">SPECIALIST LEVEL 2</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>GENAI_YELLOW_BELT:</span>
+                            <span class="val-highlight">ISSUED FEB 2026</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>GOOGLE_GENAI:</span>
+                            <span class="val-highlight">CLOUD INTRO // JAN 2026</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>AWS_PROMPT_ENG:</span>
+                            <span class="val-highlight">BEDROCK FOUNDATIONS</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>NTT_DATA_LEAD:</span>
+                            <span class="val-highlight">TEST LEAD ARCHITECT</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>IBM_DESIGN_THINKING:</span>
+                            <span class="val-highlight">PRACTITIONER TIER</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>JIRA_ENTERPRISE:</span>
+                            <span class="val-highlight">AGILE BADGED</span>
+                        </div>
+
+                        <!-- SET 2 (DUPLICATED FOR SEAMLESS LTR LOOP) -->
+
+                        <div class="telemetry-chip">
+                            <span>ISTQB_CTFL:</span>
+                            <span class="val-highlight">VERIFIED // FOUNDATION-LEVEL</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>TRICENTIS_TOSCA:</span>
+                            <span class="val-highlight">SPECIALIST LEVEL 2</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>GENAI_YELLOW_BELT:</span>
+                            <span class="val-highlight">ISSUED FEB 2026</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>GOOGLE_GENAI:</span>
+                            <span class="val-highlight">CLOUD INTRO // JAN 2026</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>AWS_PROMPT_ENG:</span>
+                            <span class="val-highlight">BEDROCK FOUNDATIONS</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>NTT_DATA_LEAD:</span>
+                            <span class="val-highlight">TEST LEAD ARCHITECT</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>IBM_DESIGN_THINKING:</span>
+                            <span class="val-highlight">PRACTITIONER TIER</span>
+                        </div>
+                        <div class="telemetry-chip">
+                            <span>JIRA_ENTERPRISE:</span>
+                            <span class="val-highlight">AGILE BADGED</span>
                         </div>
                     </div>
                 </div>
-                <!--==================== certification 2 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">Tricentis Automation Specialist Level 2 for Tricentis Tosca
-                                10.0</h3>
+
+                <!-- 2. STREAM LAYER 2: MODULAR ARCHITECTURE MATRIX (LTR) -->
+                <div class="stream-track-wrapper stream-layer-modules">
+                    <div class="stream-marquee-ltr">
+                        <!-- SET 1 (8 CARDS) -->
+
+                        <!-- MODULE 01: ISTQB Certified Tester -->
+                        <div class="kinetic-module-card" data-category="TEST ARCHITECTURE"
+                            data-domain="Software Testing &amp; Quality Assurance" data-level="Foundation Level (CTFL)"
+                            data-date="Active Credential" data-issuer="ISTQB Board"
+                            data-verify-url="https://www.istqb.org/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 01</span>
+                                    <span class="module-category">TEST ARCHITECTURE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <img src="assets/img/ISTQB.png" alt="ISTQB"
+                                        onerror="this.outerHTML='<i class=\'uil uil-check-circle\'></i>'">
+                                </div>
+                            </div>
+                            <h3 class="module-title">ISTQB Certified Tester</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">TIER:</span>
+                                    <span class="param-value highlight">FOUNDATION LEVEL</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STANDARD:</span>
+                                    <span class="param-value">ISO/IEC/IEEE 29119</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                International standard software testing methodologies, defect lifecycle governance, test
+                                analysis, and risk-weighted verification architectures.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: ISTQB BOARD</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
                         </div>
+
+                        <!-- MODULE 02: Tricentis Tosca Automation Specialist 2 -->
+                        <div class="kinetic-module-card" data-category="TEST ARCHITECTURE"
+                            data-domain="Model-Based Test Automation" data-level="Specialist Level 2 (AS2)"
+                            data-date="Tosca 10.0" data-issuer="Tricentis Academy"
+                            data-verify-url="https://www.tricentis.com/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 02</span>
+                                    <span class="module-category">TEST ARCHITECTURE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-cog" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Tricentis Tosca Specialist Level 2</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ENGINE:</span>
+                                    <span class="param-value highlight">TOSCA 10.0</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">METHOD:</span>
+                                    <span class="param-value">MODEL-BASED TEST DEV</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Advanced model-based test automation, dynamic test data management, automated API/GUI
+                                pipelines, and high-resilience execution governance.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: TRICENTIS</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 03: GenAI Academy: Yellow Belt -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Generative AI &amp; LLM Verification" data-level="Yellow Belt Certification"
+                            data-date="February 2026" data-issuer="GenAI Academy" data-verify-url="#">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 03</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-circuit" style="color: #00FF66;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">GenAI Academy: Yellow Belt</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ISSUED:</span>
+                                    <span class="param-value highlight">FEB 2026</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">FOCUS:</span>
+                                    <span class="param-value">LLM VERIFICATION &amp; OPS</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">CURRENT CYCLE</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Enterprise Generative AI fundamentals, agentic workflow synthesis, prompt engineering,
+                                and deterministic verification of LLM-generated software.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: GENAI ACADEMY</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 04: Google - Intro to Generative AI -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Google Cloud AI &amp; Foundations" data-level="Foundational Specialization"
+                            data-date="January 2026" data-issuer="Google Cloud"
+                            data-verify-url="https://cloud.google.com/training">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 04</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-google" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Google - Intro to Generative AI</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ISSUED:</span>
+                                    <span class="param-value highlight">JAN 2026</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">CORE:</span>
+                                    <span class="param-value">TRANSFORMERS &amp; GEMINI</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Foundational generative models, attention mechanisms, ethical AI safety benchmarks, and
+                                Gemini model enterprise application patterns.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: GOOGLE CLOUD</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 05: AWS - Foundations of Prompt Engineering -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Cloud AI &amp; Prompt Engineering" data-level="Technical Specialization"
+                            data-date="Verified Credential" data-issuer="Amazon Web Services"
+                            data-verify-url="https://aws.amazon.com/training/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 05</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-aws" style="color: #FF9900;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">AWS Prompt Engineering</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">PLATFORM:</span>
+                                    <span class="param-value highlight">AMAZON BEDROCK</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">TECHNIQUE:</span>
+                                    <span class="param-value">FEW-SHOT &amp; CHAINING</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                In-context conditioning, few-shot prompting patterns, reasoning trees, and structured
+                                evaluation metrics for foundation model orchestration.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: AWS</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 06: NTT Data Certified Test Lead -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Enterprise Quality Leadership" data-level="Test Lead Accreditation"
+                            data-date="Executive Level" data-issuer="NTT DATA" data-verify-url="#">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 06</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-shield-check" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">NTT Data Certified Test Lead</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">SCOPE:</span>
+                                    <span class="param-value highlight">50+ DISTRIBUTED QE</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">PROGRAMME:</span>
+                                    <span class="param-value">ENTERPRISE SCALE</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Strategic test leadership, multi-vendor governance frameworks, digital transformation
+                                delivery, risk mitigation, and zero-defect release policies.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: NTT DATA</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 07: IBM Enterprise Design Thinking Practitioner -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Human-Centered Engineering" data-level="Practitioner Tier"
+                            data-date="Verified Credential" data-issuer="IBM"
+                            data-verify-url="https://www.ibm.com/design/thinking/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 07</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <img src="assets/img/Badges_v8-07_Practitioner.png" alt="IBM Design Thinking"
+                                        onerror="this.outerHTML='<i class=\'uil uil-lightbulb-alt\'></i>'">
+                                </div>
+                            </div>
+                            <h3 class="module-title">IBM Design Thinking Practitioner</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">FOCUS:</span>
+                                    <span class="param-value highlight">USER-CENTRIC QUALITY</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">METHOD:</span>
+                                    <span class="param-value">EMPATHY &amp; CO-DESIGN</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Empathetic stakeholder alignment, user journey mapping, agile hypothesis-driven
+                                ideation, and iterative prototype validation loops.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: IBM</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 08: Jira Fundamentals Badge -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Agile Lifecycle Governance" data-level="Certified Fundamentals"
+                            data-date="Verified Credential" data-issuer="Atlassian University"
+                            data-verify-url="https://university.atlassian.com/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 08</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-jira" style="color: #0052CC;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Jira Fundamentals Badge</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ECOSYSTEM:</span>
+                                    <span class="param-value highlight">ATLASSIAN CLOUD</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">SYSTEM:</span>
+                                    <span class="param-value">AGILE TRACEABILITY</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Scrum &amp; Kanban governance, defect triage lifecycle automation, test coverage
+                                mapping, and end-to-end requirement traceability.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: ATLASSIAN</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- SET 2 (DUPLICATED FOR SEAMLESS LTR INFINITE LOOP) -->
+
+                        <!-- MODULE 01 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="TEST ARCHITECTURE"
+                            data-domain="Software Testing &amp; Quality Assurance" data-level="Foundation Level (CTFL)"
+                            data-date="Active Credential" data-issuer="ISTQB Board"
+                            data-verify-url="https://www.istqb.org/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 01</span>
+                                    <span class="module-category">TEST ARCHITECTURE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <img src="assets/img/ISTQB.png" alt="ISTQB"
+                                        onerror="this.outerHTML='<i class=\'uil uil-check-circle\'></i>'">
+                                </div>
+                            </div>
+                            <h3 class="module-title">ISTQB Certified Tester</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">TIER:</span>
+                                    <span class="param-value highlight">FOUNDATION LEVEL</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STANDARD:</span>
+                                    <span class="param-value">ISO/IEC/IEEE 29119</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                International standard software testing methodologies, defect lifecycle governance, test
+                                analysis, and risk-weighted verification architectures.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: ISTQB BOARD</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 02 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="TEST ARCHITECTURE"
+                            data-domain="Model-Based Test Automation" data-level="Specialist Level 2 (AS2)"
+                            data-date="Tosca 10.0" data-issuer="Tricentis Academy"
+                            data-verify-url="https://www.tricentis.com/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 02</span>
+                                    <span class="module-category">TEST ARCHITECTURE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-cog" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Tricentis Tosca Specialist Level 2</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ENGINE:</span>
+                                    <span class="param-value highlight">TOSCA 10.0</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">METHOD:</span>
+                                    <span class="param-value">MODEL-BASED TEST DEV</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Advanced model-based test automation, dynamic test data management, automated API/GUI
+                                pipelines, and high-resilience execution governance.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: TRICENTIS</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 03 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Generative AI &amp; LLM Verification" data-level="Yellow Belt Certification"
+                            data-date="February 2026" data-issuer="GenAI Academy" data-verify-url="#">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 03</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-circuit" style="color: #00FF66;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">GenAI Academy: Yellow Belt</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ISSUED:</span>
+                                    <span class="param-value highlight">FEB 2026</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">FOCUS:</span>
+                                    <span class="param-value">LLM VERIFICATION &amp; OPS</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">CURRENT CYCLE</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Enterprise Generative AI fundamentals, agentic workflow synthesis, prompt engineering,
+                                and deterministic verification of LLM-generated software.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: GENAI ACADEMY</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 04 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Google Cloud AI &amp; Foundations" data-level="Foundational Specialization"
+                            data-date="January 2026" data-issuer="Google Cloud"
+                            data-verify-url="https://cloud.google.com/training">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 04</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-google" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Google - Intro to Generative AI</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ISSUED:</span>
+                                    <span class="param-value highlight">JAN 2026</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">CORE:</span>
+                                    <span class="param-value">TRANSFORMERS &amp; GEMINI</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Foundational generative models, attention mechanisms, ethical AI safety benchmarks, and
+                                Gemini model enterprise application patterns.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: GOOGLE CLOUD</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 05 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AI &amp; LLM"
+                            data-domain="Cloud AI &amp; Prompt Engineering" data-level="Technical Specialization"
+                            data-date="Verified Credential" data-issuer="Amazon Web Services"
+                            data-verify-url="https://aws.amazon.com/training/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 05</span>
+                                    <span class="module-category">AI &amp; LLM</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-aws" style="color: #FF9900;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">AWS Prompt Engineering</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">PLATFORM:</span>
+                                    <span class="param-value highlight">AMAZON BEDROCK</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">TECHNIQUE:</span>
+                                    <span class="param-value">FEW-SHOT &amp; CHAINING</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                In-context conditioning, few-shot prompting patterns, reasoning trees, and structured
+                                evaluation metrics for foundation model orchestration.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: AWS</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 06 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Enterprise Quality Leadership" data-level="Test Lead Accreditation"
+                            data-date="Executive Level" data-issuer="NTT DATA" data-verify-url="#">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 06</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="uil uil-shield-check" style="color: var(--kinetic-accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">NTT Data Certified Test Lead</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">SCOPE:</span>
+                                    <span class="param-value highlight">50+ DISTRIBUTED QE</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">PROGRAMME:</span>
+                                    <span class="param-value">ENTERPRISE SCALE</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Strategic test leadership, multi-vendor governance frameworks, digital transformation
+                                delivery, risk mitigation, and zero-defect release policies.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: NTT DATA</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 07 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Human-Centered Engineering" data-level="Practitioner Tier"
+                            data-date="Verified Credential" data-issuer="IBM"
+                            data-verify-url="https://www.ibm.com/design/thinking/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 07</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <img src="assets/img/Badges_v8-07_Practitioner.png" alt="IBM Design Thinking"
+                                        onerror="this.outerHTML='<i class=\'uil uil-lightbulb-alt\'></i>'">
+                                </div>
+                            </div>
+                            <h3 class="module-title">IBM Design Thinking Practitioner</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">FOCUS:</span>
+                                    <span class="param-value highlight">USER-CENTRIC QUALITY</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">METHOD:</span>
+                                    <span class="param-value">EMPATHY &amp; CO-DESIGN</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Empathetic stakeholder alignment, user journey mapping, agile hypothesis-driven
+                                ideation, and iterative prototype validation loops.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: IBM</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- MODULE 08 DUPLICATE -->
+                        <div class="kinetic-module-card" data-category="AGILE &amp; GOVERNANCE"
+                            data-domain="Agile Lifecycle Governance" data-level="Certified Fundamentals"
+                            data-date="Verified Credential" data-issuer="Atlassian University"
+                            data-verify-url="https://university.atlassian.com/">
+                            <div class="module-card-header">
+                                <div class="module-tag-row">
+                                    <span class="module-id">MODULE // 08</span>
+                                    <span class="module-category">AGILE &amp; GOVERNANCE</span>
+                                </div>
+                                <div class="module-icon-badge">
+                                    <i class="fa-brands fa-jira" style="color: #0052CC;"></i>
+                                </div>
+                            </div>
+                            <h3 class="module-title">Jira Fundamentals Badge</h3>
+                            <div class="module-parameters">
+                                <div class="param-line">
+                                    <span class="param-key">ECOSYSTEM:</span>
+                                    <span class="param-value highlight">ATLASSIAN CLOUD</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">SYSTEM:</span>
+                                    <span class="param-value">AGILE TRACEABILITY</span>
+                                </div>
+                                <div class="param-line">
+                                    <span class="param-key">STATUS:</span>
+                                    <span class="param-value highlight">VERIFIED AUTH</span>
+                                </div>
+                            </div>
+                            <p class="module-description">
+                                Scrum &amp; Kanban governance, defect triage lifecycle automation, test coverage
+                                mapping, and end-to-end requirement traceability.
+                            </p>
+                            <div class="module-footer">
+                                <span class="module-issuer">AUTH: ATLASSIAN</span>
+                                <button class="module-action-btn">INSPECT &rarr;</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <!--==================== certification 4 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">GenAI Academy: Yellow Belt</h3>
-                            <span class="certification__subtitle">Issued: February 2026</span>
-                        </div>
-                    </div>
-                </div>
-                <!--==================== certification 5 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">Jira Fundamentals Badge</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--==================== certification 6 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">NTT Data Certified Test Lead</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--==================== certification 7 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">IBM - Enterprise Design Thinking Practitioner</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--==================== certification 8 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">Google - Introduction to Generative AI</h3>
-                            <span class="certification__subtitle">Issued: January 2026</span>
-                        </div>
-                    </div>
-                </div>
-                <!--==================== certification 9 ====================-->
-                <div class="certification__content certification__close">
-                    <div class="certification__header">
-                        <i class="uil uil-brightness-empty certification__icon"></i>
-                        <div>
-                            <h3 class="certification__title">AWS - Foundations of Prompt Engineering</h3>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -920,8 +1544,54 @@
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
+    <!--==================== KINETIC CERTIFICATIONS MODAL ====================-->
+    <div class="kinetic-modal-overlay" id="kinetic-cert-modal">
+        <div class="kinetic-modal-card">
+            <button class="modal-close-btn">&times;</button>
+            <div class="modal-hud-tag">MODULE // 01 // TEST ARCHITECTURE</div>
+            <h3 class="modal-headline">ISTQB Certified Tester</h3>
+
+            <div class="modal-params-grid">
+                <div class="modal-param-block">
+                    <span class="modal-param-label">DOMAIN / FIELD</span>
+                    <span class="modal-param-val modal-val-domain">Software Testing &amp; QA</span>
+                </div>
+                <div class="modal-param-block">
+                    <span class="modal-param-label">ACCREDITATION LEVEL</span>
+                    <span class="modal-param-val modal-val-level">Foundation Level (CTFL)</span>
+                </div>
+                <div class="modal-param-block">
+                    <span class="modal-param-label">ISSUANCE / VALIDITY</span>
+                    <span class="modal-param-val modal-val-date">Active Credential</span>
+                </div>
+                <div class="modal-param-block">
+                    <span class="modal-param-label">CERTIFYING AUTHORITY</span>
+                    <span class="modal-param-val modal-val-issuer">ISTQB Board</span>
+                </div>
+            </div>
+
+            <p class="modal-body-text">
+                Detailed credential description goes here.
+            </p>
+
+            <div class="modal-actions-row">
+                <button class="modal-btn modal-btn-secondary modal-close-btn-bottom"
+                    onclick="document.getElementById('kinetic-cert-modal').classList.remove('active'); document.body.style.overflow='';">
+                    CLOSE TELEMETRY
+                </button>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="modal-btn modal-btn-primary modal-verify-link">
+                    VERIFY ON ISSUER BOARD &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
+
+    <!--==================== KINETIC CERTIFICATIONS JS ====================-->
+    <script src="assets/js/kinetic-certifications.js"></script>
 </body>
 
 </html>

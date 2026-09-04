@@ -617,7 +617,6 @@ body:not(.dark-theme) .header {
 }
 
 .home__title {
-    font-size: clamp(2rem, 6.5vw, 2.5rem);
     text-align: center;
     margin-bottom: 0.35rem;
     width: 100%;
@@ -711,10 +710,10 @@ body:not(.dark-theme) .header {
 
 .home__title {
     font-family: 'Syne', 'Space Grotesk', sans-serif;
-    font-size: var(--big-font-size);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
     font-weight: 800;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.18;
     white-space: nowrap;
 }
 
@@ -1870,7 +1869,8 @@ body.dark-theme .clients__content:hover {
 
     .home__title {
         white-space: nowrap !important;
-        font-size: clamp(1.4rem, 6.4vw, 2.2rem) !important;
+        font-size: clamp(1.65rem, 7vw, 2.5rem) !important;
+        line-height: 1.18 !important;
         text-align: center !important;
         margin-bottom: 0.35rem !important;
         width: 100% !important;
@@ -1927,7 +1927,7 @@ body.dark-theme .clients__content:hover {
     }
 
     .home__title {
-        font-size: clamp(1.2rem, 5.8vw, 1.4rem) !important;
+        font-size: clamp(1.35rem, 6.2vw, 1.65rem) !important;
     }
 
     .skills__title {
