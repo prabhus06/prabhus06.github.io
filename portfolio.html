@@ -63,6 +63,7 @@
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/kinetic-certifications.css">
+    <link rel="stylesheet" href="assets/css/periodic-table.css">
 
     <title>Prabhu S — QA Engineering Manager &amp; Quality Leader | Portfolio</title>
     <!-- Google Tag Manager -->
@@ -267,152 +268,218 @@
 
         <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
-            <h2 class="section__title"><span class="bracket">[</span> Skills <span class="bracket">]</span></h2>
-            <span class="section__subtitle">Technical Matrix</span>
+            <h2 class="section__title"><span class="bracket">[</span> Skills Matrix <span class="bracket">]</span></h2>
+            <span class="section__subtitle">Periodic Classification Architecture</span>
 
-            <div class="skills__container container grid">
+            <!-- MAIN PERIODIC TABLE ROOT CONTAINER -->
+            <div class="pt-root-container">
 
-                <!--==================== SKILLS 1 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-brackets-curly skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Programming Skill</h3>
-                            <span class="skills__subtitle">Code that powers it all</span>
+                <!-- 1. SYSTEM TELEMETRY BANNER -->
+                <div class="pt-telemetry-banner">
+                    <div class="pt-telemetry-metrics">
+                        <div class="pt-telemetry-item">
+                            <span class="pt-telemetry-label">TOTAL ELEMENTS:</span>
+                            <span class="pt-telemetry-val highlight pt-telemetry-total-val">100</span>
                         </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
+                        <div class="pt-telemetry-item">
+                            <span class="pt-telemetry-label">CORE PROFICIENCY:</span>
+                            <span class="pt-telemetry-val">94.8%</span>
+                        </div>
+                        <div class="pt-telemetry-item">
+                            <span class="pt-telemetry-label">PRODUCTION TENURE:</span>
+                            <span class="pt-telemetry-val highlight">17+ YRS</span>
+                        </div>
+                        <div class="pt-telemetry-item">
+                            <span class="pt-telemetry-label">PARADIGM:</span>
+                            <span class="pt-telemetry-val">POLYGLOT_ENTERPRISE</span>
+                        </div>
                     </div>
-                    <div id="skills-programming" class="skills__list grid"></div>
+                    <div class="pt-telemetry-live">
+                        <span class="pt-radar-pill">
+                            <span class="pt-radar-dot"></span>
+                            RADAR: ONLINE
+                        </span>
+                        <span class="pt-telemetry-active-spec">[ Ts // NO: 01 ]</span>
+                    </div>
                 </div>
 
-                <!--==================== SKILLS 2 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-servers skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Engineering Tools</h3>
-                            <span class="skills__subtitle">Build, ship &amp; monitor</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
+                <!-- 2. CONTROLS, SEARCH (CMD+K) & GROUP FILTERS -->
+                <div class="pt-controls-bar">
+                    <div class="pt-filters-group">
+                        <button class="pt-filter-btn active" data-category="all" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            ALL <span class="pt-filter-count">100</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="languages" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            LANGUAGES <span class="pt-filter-count">12</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="frontend" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            FRONTEND &amp; UI <span class="pt-filter-count">13</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="backend" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            BACKEND &amp; RUNTIMES <span class="pt-filter-count">10</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="systems" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            SYSTEMS &amp; CLOUD <span class="pt-filter-count">11</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="data-ai" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            DATA &amp; AI/ML <span class="pt-filter-count">16</span>
+                        </button>
+                        <button class="pt-filter-btn" data-category="devops" type="button">
+                            <span class="pt-filter-indicator"></span>
+                            DEVOPS &amp; TOOLING <span class="pt-filter-count">38</span>
+                        </button>
                     </div>
-                    <div id="skills-engineering" class="skills__list grid"></div>
+
+                    <!-- Global Search (CMD+K) -->
+                    <div class="pt-search-box">
+                        <i class="uil uil-search pt-search-icon"></i>
+                        <input type="text" class="pt-search-input" placeholder="SEARCH (CMD+K)..." autocomplete="off" spellcheck="false" aria-label="Search Skills">
+                        <span class="pt-search-shortcut">
+                            <kbd>CMD</kbd><kbd>K</kbd>
+                        </span>
+                        <button class="pt-search-clear" type="button" aria-label="Clear search">&times;</button>
+                    </div>
                 </div>
 
-                <!--==================== SKILLS 3 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-brain skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">AI Tools and Optimization</h3>
-                            <span class="skills__subtitle">Smarter systems, faster results</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
+                <!-- 3. PERIODIC CLASSIFICATION MATRIX CANVAS -->
+                <div class="pt-matrix-outer">
+                    <div class="pt-scroll-hint">
+                        <span>&larr; HORIZONTAL SCROLL ENABLED &bull; 48 CLASSIFIED ELEMENTS &rarr;</span>
+                        <span>GROUPS: G01 - G12 &bull; PERIODS: P1 - P4</span>
                     </div>
-                    <div id="skills-ai-optimization" class="skills__list grid"></div>
+                    <div class="pt-grid-canvas">
+                        <!-- Populated dynamically by assets/js/periodic-table.js -->
+                    </div>
                 </div>
 
-                <!--==================== SKILLS 4 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-robot skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">AI Agentic Tools & Projects</h3>
-                            <span class="skills__subtitle">Designed, built &amp; Deployed</span>
+                <!-- 4. TELEMETRY INSPECTOR DRAWER -->
+                <div class="pt-inspector-drawer" data-category="languages">
+                    <!-- Drawer Header Bar -->
+                    <div class="pt-drawer-header">
+                        <div class="pt-drawer-title-area">
+                            <div class="pt-drawer-avatar">
+                                <span class="pt-drawer-avatar-num">01</span>
+                                <span class="pt-drawer-avatar-sym">Ts</span>
+                            </div>
+                            <div class="pt-drawer-meta-title">
+                                <div class="pt-drawer-eyebrow">LANGUAGES // ATOMIC NO: 01 // WEIGHT: 8.5Y</div>
+                                <div class="pt-drawer-name">
+                                    <span class="pt-drawer-name-text">TypeScript</span>
+                                    <span class="pt-drawer-status-pill">
+                                        <span class="pt-drawer-status-dot"></span>
+                                        ACTIVE DEPLOYMENT
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
+                        <div class="pt-drawer-nav-actions">
+                            <button class="pt-drawer-btn pt-drawer-prev" type="button" title="Previous Element" aria-label="Previous Element">
+                                <i class="uil uil-angle-left"></i> PREV
+                            </button>
+                            <button class="pt-drawer-btn pt-drawer-next" type="button" title="Next Element" aria-label="Next Element">
+                                NEXT <i class="uil uil-angle-right"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div id="skills-ai-tools" class="skills__list grid"></div>
-                </div>
 
-                <!--==================== SKILLS 5 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-cog skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Frameworks</h3>
-                            <span class="skills__subtitle">Blueprint for testing applications</span>
+                    <!-- Drawer Technical Body (3 Panels) -->
+                    <div class="pt-drawer-body">
+                        <!-- Panel A: Execution Tier & Mastery -->
+                        <div class="pt-drawer-panel">
+                            <div class="pt-panel-header">
+                                <span class="pt-panel-title">EXECUTION TIER &amp; MASTERY</span>
+                                <span class="pt-panel-badge">DIAGNOSTIC HUD</span>
+                            </div>
+                            <div class="pt-tier-block">
+                                <span class="pt-tier-label">Architectural Level</span>
+                                <div class="pt-tier-value">L6 Principal Architect &amp; Core Type Governance Lead</div>
+                            </div>
+                            <div class="pt-tier-block">
+                                <span class="pt-tier-label">Specification Baseline</span>
+                                <code class="pt-tier-spec">ECMAScript 2024 / TypeScript 5.6+ Strict Mode</code>
+                            </div>
+                            <div class="pt-tier-block">
+                                <span class="pt-tier-label">Diagnostic State</span>
+                                <div class="pt-tier-diagnostic">
+                                    <i class="uil uil-shield-check" style="color: var(--pt-hud-green);"></i>
+                                    <span class="pt-tier-diagnostic-text">HEALTH: 100% // DETERMINISTIC ZERO-ANY POLICY</span>
+                                </div>
+                            </div>
                         </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-frameworks" class="skills__list grid"></div>
-                </div>
 
-                <!--==================== SKILLS 6 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-channel skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">UX/UI</h3>
-                            <span class="skills__subtitle">Design &amp; prototyping</span>
+                        <!-- Panel B: Proficiency Vector (Gauges) -->
+                        <div class="pt-drawer-panel">
+                            <div class="pt-panel-header">
+                                <span class="pt-panel-title">PROFICIENCY VECTOR</span>
+                                <span class="pt-panel-badge">CALIBRATED RADAR</span>
+                            </div>
+                            <div class="pt-vector-list">
+                                <div class="pt-vector-item">
+                                    <div class="pt-vector-head">
+                                        <span class="pt-vector-metric">SYNTAX COMPLIANCE</span>
+                                        <span class="pt-vector-score pt-score-syntax">96%</span>
+                                    </div>
+                                    <div class="pt-vector-track">
+                                        <div class="pt-vector-fill pt-fill-syntax" style="width: 96%;"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-vector-item">
+                                    <div class="pt-vector-head">
+                                        <span class="pt-vector-metric">CONCURRENCY MODEL</span>
+                                        <span class="pt-vector-score pt-score-concurrency">92%</span>
+                                    </div>
+                                    <div class="pt-vector-track">
+                                        <div class="pt-vector-fill pt-fill-concurrency" style="width: 92%;"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-vector-item">
+                                    <div class="pt-vector-head">
+                                        <span class="pt-vector-metric">MEMORY OPTIMIZATION</span>
+                                        <span class="pt-vector-score pt-score-memory">88%</span>
+                                    </div>
+                                    <div class="pt-vector-track">
+                                        <div class="pt-vector-fill pt-fill-memory" style="width: 88%;"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-vector-item">
+                                    <div class="pt-vector-head">
+                                        <span class="pt-vector-metric">SYSTEMS ARCHITECTURE</span>
+                                        <span class="pt-vector-score pt-score-architecture">95%</span>
+                                    </div>
+                                    <div class="pt-vector-track">
+                                        <div class="pt-vector-fill pt-fill-architecture" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-uxui" class="skills__list grid"></div>
-                </div>
 
-                <!--==================== SKILLS 7 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-tachometer-fast skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Test management</h3>
-                            <span class="skills__subtitle">Plan, track &amp; report</span>
+                        <!-- Panel C: Project Deployment Evidence -->
+                        <div class="pt-drawer-panel">
+                            <div class="pt-panel-header">
+                                <span class="pt-panel-title">PROJECT DEPLOYMENT EVIDENCE</span>
+                                <span class="pt-panel-badge">PRODUCTION VERIFIED</span>
+                            </div>
+                            <div class="pt-evidence-list">
+                                <span class="pt-tier-label">Linked Project Tags</span>
+                                <div class="pt-project-tags">
+                                    <span class="pt-project-tag"><i class="uil uil-check-circle"></i> Trading Engine SDK</span>
+                                    <span class="pt-project-tag"><i class="uil uil-check-circle"></i> Telemetry UI</span>
+                                    <span class="pt-project-tag"><i class="uil uil-check-circle"></i> Microfrontend Platform</span>
+                                </div>
+                            </div>
+                            <div class="pt-repo-action-wrap">
+                                <a href="https://github.com/prabhus06" target="_blank" rel="noopener noreferrer" class="pt-action-link">
+                                    VIEW TS REPOSITORY IMPLEMENTATION &rarr;
+                                </a>
+                            </div>
                         </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
                     </div>
-                    <div id="skills-test-management" class="skills__list grid"></div>
-                </div>
-
-                <!--==================== SKILLS 8 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-cloud-data-connection skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Cloud Tools</h3>
-                            <span class="skills__subtitle">Infrastructure &amp; services</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-cloud" class="skills__list grid"></div>
-                </div>
-
-                <!--==================== SKILLS 9 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-layer-group skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Technologies</h3>
-                            <span class="skills__subtitle">Platforms &amp; ecosystems</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-technologies" class="skills__list grid"></div>
-                </div>
-
-                <!--==================== SKILLS 10 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-database-alt skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Databases</h3>
-                            <span class="skills__subtitle">SQL and NoSQL</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-databases" class="skills__list grid"></div>
-                </div>
-
-                <!--==================== SKILLS 11 ====================-->
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-english-to-chinese skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Languages</h3>
-                            <span class="skills__subtitle">Spoken &amp; written</span>
-                        </div>
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-                    <div id="skills-languages" class="skills__list grid"></div>
                 </div>
 
             </div>
@@ -1681,6 +1748,9 @@
 
     <!--==================== KINETIC CERTIFICATIONS JS ====================-->
     <script src="assets/js/kinetic-certifications.js"></script>
+
+    <!--==================== KINETIC PERIODIC TABLE JS ====================-->
+    <script src="assets/js/periodic-table.js"></script>
 </body>
 
 </html>
